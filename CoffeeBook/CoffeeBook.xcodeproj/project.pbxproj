@@ -12,6 +12,12 @@
 		7A9F25101C882B140061C8FD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9F250F1C882B140061C8FD /* AppDelegate.m */; };
 		7A9F25121C882B140061C8FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A9F25111C882B140061C8FD /* Assets.xcassets */; };
 		7A9F25151C882B140061C8FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A9F25131C882B140061C8FD /* LaunchScreen.storyboard */; };
+		7AF227651C88525F008C2F23 /* BookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF227641C88525F008C2F23 /* BookViewController.m */; };
+		7AF227681C885283008C2F23 /* BookClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF227671C885283008C2F23 /* BookClassViewController.m */; };
+		7AF2276B1C885298008C2F23 /* DiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF2276A1C885298008C2F23 /* DiscoverViewController.m */; };
+		7AF2276D1C885390008C2F23 /* Book.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AF2276C1C885390008C2F23 /* Book.storyboard */; };
+		7AF2276F1C8853A6008C2F23 /* BookClass.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AF2276E1C8853A6008C2F23 /* BookClass.storyboard */; };
+		7AF227711C8853B4008C2F23 /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AF227701C8853B4008C2F23 /* Discover.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +30,16 @@
 		7A9F25111C882B140061C8FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A9F25141C882B140061C8FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7A9F25161C882B140061C8FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7AF227621C88438E008C2F23 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		7AF227631C88525F008C2F23 /* BookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookViewController.h; sourceTree = "<group>"; };
+		7AF227641C88525F008C2F23 /* BookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookViewController.m; sourceTree = "<group>"; };
+		7AF227661C885283008C2F23 /* BookClassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookClassViewController.h; sourceTree = "<group>"; };
+		7AF227671C885283008C2F23 /* BookClassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookClassViewController.m; sourceTree = "<group>"; };
+		7AF227691C885297008C2F23 /* DiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoverViewController.h; sourceTree = "<group>"; };
+		7AF2276A1C885298008C2F23 /* DiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoverViewController.m; sourceTree = "<group>"; };
+		7AF2276C1C885390008C2F23 /* Book.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Book.storyboard; sourceTree = "<group>"; };
+		7AF2276E1C8853A6008C2F23 /* BookClass.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BookClass.storyboard; sourceTree = "<group>"; };
+		7AF227701C8853B4008C2F23 /* Discover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Discover.storyboard; sourceTree = "<group>"; };
 		E4776177903408030F27C1B5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -60,6 +76,9 @@
 		7A9F250A1C882B140061C8FD /* CoffeeBook */ = {
 			isa = PBXGroup;
 			children = (
+				7AF227501C8840D3008C2F23 /* common */,
+				7AF227511C884159008C2F23 /* Libary */,
+				7AF227521C884160008C2F23 /* class */,
 				7A9F250E1C882B140061C8FD /* AppDelegate.h */,
 				7A9F250F1C882B140061C8FD /* AppDelegate.m */,
 				7A9F25111C882B140061C8FD /* Assets.xcassets */,
@@ -76,6 +95,133 @@
 				7A9F250C1C882B140061C8FD /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7AF227501C8840D3008C2F23 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				7AF227621C88438E008C2F23 /* PrefixHeader.pch */,
+			);
+			path = common;
+			sourceTree = SOURCE_ROOT;
+		};
+		7AF227511C884159008C2F23 /* Libary */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Libary;
+			sourceTree = SOURCE_ROOT;
+		};
+		7AF227521C884160008C2F23 /* class */ = {
+			isa = PBXGroup;
+			children = (
+				7AF227531C884160008C2F23 /* Book */,
+				7AF227571C884160008C2F23 /* BookClass */,
+				7AF2275B1C884160008C2F23 /* Discover */,
+			);
+			path = class;
+			sourceTree = "<group>";
+		};
+		7AF227531C884160008C2F23 /* Book */ = {
+			isa = PBXGroup;
+			children = (
+				7AF227541C884160008C2F23 /* Controller */,
+				7AF227551C884160008C2F23 /* Models */,
+				7AF227561C884160008C2F23 /* View */,
+			);
+			path = Book;
+			sourceTree = "<group>";
+		};
+		7AF227541C884160008C2F23 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7AF227631C88525F008C2F23 /* BookViewController.h */,
+				7AF227641C88525F008C2F23 /* BookViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7AF227551C884160008C2F23 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7AF227561C884160008C2F23 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7AF2276C1C885390008C2F23 /* Book.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7AF227571C884160008C2F23 /* BookClass */ = {
+			isa = PBXGroup;
+			children = (
+				7AF227581C884160008C2F23 /* Controller */,
+				7AF227591C884160008C2F23 /* Models */,
+				7AF2275A1C884160008C2F23 /* View */,
+			);
+			path = BookClass;
+			sourceTree = "<group>";
+		};
+		7AF227581C884160008C2F23 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7AF227661C885283008C2F23 /* BookClassViewController.h */,
+				7AF227671C885283008C2F23 /* BookClassViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7AF227591C884160008C2F23 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7AF2275A1C884160008C2F23 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7AF2276E1C8853A6008C2F23 /* BookClass.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7AF2275B1C884160008C2F23 /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				7AF2275C1C884160008C2F23 /* Controller */,
+				7AF2275D1C884160008C2F23 /* Models */,
+				7AF2275E1C884160008C2F23 /* View */,
+			);
+			path = Discover;
+			sourceTree = "<group>";
+		};
+		7AF2275C1C884160008C2F23 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7AF227691C885297008C2F23 /* DiscoverViewController.h */,
+				7AF2276A1C885298008C2F23 /* DiscoverViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7AF2275D1C884160008C2F23 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7AF2275E1C884160008C2F23 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7AF227701C8853B4008C2F23 /* Discover.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		DA5C2E17768F4B806E90E384 /* Frameworks */ = {
@@ -156,7 +302,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AF2276F1C8853A6008C2F23 /* BookClass.storyboard in Resources */,
 				7A9F25121C882B140061C8FD /* Assets.xcassets in Resources */,
+				7AF227711C8853B4008C2F23 /* Discover.storyboard in Resources */,
+				7AF2276D1C885390008C2F23 /* Book.storyboard in Resources */,
 				7A9F25151C882B140061C8FD /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -216,6 +365,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AF2276B1C885298008C2F23 /* DiscoverViewController.m in Sources */,
+				7AF227681C885283008C2F23 /* BookClassViewController.m in Sources */,
+				7AF227651C88525F008C2F23 /* BookViewController.m in Sources */,
 				7A9F25101C882B140061C8FD /* AppDelegate.m in Sources */,
 				7A9F250D1C882B140061C8FD /* main.m in Sources */,
 			);
@@ -320,6 +472,8 @@
 			baseConfigurationReference = 01542F6810975C90291E0412 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = /Users/sdzy/Desktop/CoffeeBook/CoffeeBook/common/PrefixHeader.pch;
 				INFOPLIST_FILE = CoffeeBook/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = GuoFeiFei.CoffeeBook;
@@ -332,6 +486,8 @@
 			baseConfigurationReference = 59DFF7739C29D37DE772F8E2 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = /Users/sdzy/Desktop/CoffeeBook/CoffeeBook/common/PrefixHeader.pch;
 				INFOPLIST_FILE = CoffeeBook/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = GuoFeiFei.CoffeeBook;

@@ -7,9 +7,11 @@
 //
 
 #import "AppDelegate.h"
-
+#import "BookViewController.h"
+#import "BookClassViewController.h"
+#import "DiscoverViewController.h"
 @interface AppDelegate ()
-
+@property(nonatomic, strong) UITabBarController *tabBarVC;
 @end
 
 @implementation AppDelegate
@@ -17,6 +19,38 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    self.tabBarVC = [[UITabBarController alloc] init];
+    
+    //书
+    UIStoryboard *bookStoryboard = [UIStoryboard storyboardWithName:@"Book" bundle:nil];
+    UINavigationController *bookNav = bookStoryboard.instantiateInitialViewController;
+    bookNav.tabBarItem.image = [UIImage imageNamed:@"bookclub_tabIcon_read_stroked60"];
+    bookNav.tabBarItem.imageInsets = UIEdgeInsetsMake(0, 0, 0, 0);
+    
+    UIImage *bookSelectImage = [UIImage imageNamed:@"bookclub_tabIcon_read_solid60"];
+    bookNav.tabBarItem.selectedImage = [bookSelectImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    //发现
+    UIStoryboard *discoverStoryboard = [UIStoryboard storyboardWithName:@"Discover" bundle:nil];
+    UINavigationController *discoverNav = discoverStoryboard.instantiateInitialViewController;
+    discoverNav.tabBarItem.image = [UIImage imageNamed:@"bookclub_tabIcon_social_stroked60"];
+    
+    discoverNav.tabBarItem.imageInsets = UIEdgeInsetsMake(0, 0, 0, 0);
+    UIImage *discoverSelectImage = [UIImage imageNamed:@"bookclub_tabIcon_social_solid60"];
+    discoverNav.tabBarItem.selectedImage = [discoverSelectImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+    //类目
+    UIStoryboard *bookClassStoryboad = [UIStoryboard storyboardWithName:@"BookClass" bundle:nil];
+    UINavigationController *bookClassNav = bookClassStoryboad.instantiateInitialViewController;
+    bookClassNav.tabBarItem.image = [UIImage imageNamed:@"bookclub_tabIcon_books_stroked60"];
+    bookClassNav.tabBarItem.imageInsets = UIEdgeInsetsMake(0, 0, 0, 0);
+    UIImage *bookClassSelectImage = [UIImage imageNamed:@"bookclub_tabIcon_books_solid60"];
+    bookClassNav.tabBarItem.selectedImage = [bookClassSelectImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+    
+    self.tabBarVC.tabBar.barTintColor = [UIColor whiteColor];
+    self.tabBarVC.viewControllers = @[bookNav, discoverNav, bookClassNav];
+    self.window.rootViewController = self.tabBarVC;
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
