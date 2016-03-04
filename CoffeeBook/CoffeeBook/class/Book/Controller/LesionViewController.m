@@ -1,20 +1,18 @@
 //
-//  DiscoverViewController.m
+//  LesionViewController.m
 //  CoffeeBook
 //
-//  Created by scjy on 16/3/3.
+//  Created by scjy on 16/3/4.
 //  Copyright © 2016年 郭飞飞. All rights reserved.
 //
 
-#import "DiscoverViewController.h"
+#import "LesionViewController.h"
 
-@interface DiscoverViewController ()
-//{
-//"fragmentId": "1028"
-//}
+@interface LesionViewController ()
+
 @end
 
-@implementation DiscoverViewController
+@implementation LesionViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

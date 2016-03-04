@@ -1,26 +1,35 @@
 //
-//  DiscoverViewController.m
+//  SeeViewController.m
 //  CoffeeBook
 //
-//  Created by scjy on 16/3/3.
+//  Created by scjy on 16/3/4.
 //  Copyright © 2016年 郭飞飞. All rights reserved.
 //
 
-#import "DiscoverViewController.h"
+#import "SeeViewController.h"
+#import <AFNetworking/AFHTTPSessionManager.h>
+@interface SeeViewController ()
 
-@interface DiscoverViewController ()
-//{
-//"fragmentId": "1028"
-//}
 @end
 
-@implementation DiscoverViewController
+@implementation SeeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.tabBarController.tabBar.hidden = YES;
+    [self loadData];
+    
+    
 }
-
+- (void)loadData{
+    AFHTTPSessionManager *sessionManager = [AFHTTPSessionManager manager];
+    sessionManager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
+    NSString *id = [NSString stringWithFormat:@"%@", self.seeId];
+    NSDictionary *prameter = @{@"fragmentId": id};
+    
+    
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

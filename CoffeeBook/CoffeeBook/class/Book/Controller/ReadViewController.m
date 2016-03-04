@@ -1,20 +1,18 @@
 //
-//  DiscoverViewController.m
+//  ReadViewController.m
 //  CoffeeBook
 //
-//  Created by scjy on 16/3/3.
+//  Created by scjy on 16/3/4.
 //  Copyright © 2016年 郭飞飞. All rights reserved.
 //
 
-#import "DiscoverViewController.h"
+#import "ReadViewController.h"
 
-@interface DiscoverViewController ()
-//{
-//"fragmentId": "1028"
-//}
+@interface ReadViewController ()
+
 @end
 
-@implementation DiscoverViewController
+@implementation ReadViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

@@ -12,6 +12,19 @@
 		7A9F25101C882B140061C8FD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9F250F1C882B140061C8FD /* AppDelegate.m */; };
 		7A9F25121C882B140061C8FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A9F25111C882B140061C8FD /* Assets.xcassets */; };
 		7A9F25151C882B140061C8FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A9F25131C882B140061C8FD /* LaunchScreen.storyboard */; };
+		7AD590751C891A04008460B8 /* blueArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AD5906B1C891A04008460B8 /* blueArrow.png */; };
+		7AD590761C891A04008460B8 /* blueArrowDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AD5906C1C891A04008460B8 /* blueArrowDown.png */; };
+		7AD590771C891A04008460B8 /* PullingRefreshTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD5906E1C891A04008460B8 /* PullingRefreshTableView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7AD590781C891A04008460B8 /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD590701C891A04008460B8 /* ShareViewController.m */; };
+		7AD590791C891A04008460B8 /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7AD590721C891A04008460B8 /* ProgressHUD.bundle */; };
+		7AD5907A1C891A04008460B8 /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD590741C891A04008460B8 /* ProgressHUD.m */; };
+		7AD5907E1C892028008460B8 /* BookTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD5907C1C892028008460B8 /* BookTableViewCell.m */; };
+		7AD5907F1C892028008460B8 /* BookTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AD5907D1C892028008460B8 /* BookTableViewCell.xib */; };
+		7AD590841C89610F008460B8 /* Book.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AD590831C89610F008460B8 /* Book.plist */; };
+		7AD590871C896DE0008460B8 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD590861C896DE0008460B8 /* Model.m */; };
+		7AD5908A1C89AB91008460B8 /* ReadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD590891C89AB91008460B8 /* ReadViewController.m */; };
+		7AD5908D1C89AD53008460B8 /* LesionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD5908C1C89AD53008460B8 /* LesionViewController.m */; };
+		7AD590901C89AD5D008460B8 /* SeeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD5908F1C89AD5D008460B8 /* SeeViewController.m */; };
 		7AF227651C88525F008C2F23 /* BookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF227641C88525F008C2F23 /* BookViewController.m */; };
 		7AF227681C885283008C2F23 /* BookClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF227671C885283008C2F23 /* BookClassViewController.m */; };
 		7AF2276B1C885298008C2F23 /* DiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF2276A1C885298008C2F23 /* DiscoverViewController.m */; };
@@ -30,6 +43,28 @@
 		7A9F25111C882B140061C8FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A9F25141C882B140061C8FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7A9F25161C882B140061C8FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7AD5906B1C891A04008460B8 /* blueArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueArrow.png; sourceTree = "<group>"; };
+		7AD5906C1C891A04008460B8 /* blueArrowDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueArrowDown.png; sourceTree = "<group>"; };
+		7AD5906D1C891A04008460B8 /* PullingRefreshTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullingRefreshTableView.h; sourceTree = "<group>"; };
+		7AD5906E1C891A04008460B8 /* PullingRefreshTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullingRefreshTableView.m; sourceTree = "<group>"; };
+		7AD5906F1C891A04008460B8 /* ShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareViewController.h; sourceTree = "<group>"; };
+		7AD590701C891A04008460B8 /* ShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareViewController.m; sourceTree = "<group>"; };
+		7AD590721C891A04008460B8 /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
+		7AD590731C891A04008460B8 /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
+		7AD590741C891A04008460B8 /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
+		7AD5907B1C892028008460B8 /* BookTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookTableViewCell.h; sourceTree = "<group>"; };
+		7AD5907C1C892028008460B8 /* BookTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookTableViewCell.m; sourceTree = "<group>"; };
+		7AD5907D1C892028008460B8 /* BookTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookTableViewCell.xib; sourceTree = "<group>"; };
+		7AD590801C892CB4008460B8 /* JieKo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JieKo.h; path = ../CoffeeBook/class/Book/Controller/JieKo.h; sourceTree = "<group>"; };
+		7AD590831C89610F008460B8 /* Book.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Book.plist; sourceTree = "<group>"; };
+		7AD590851C896DE0008460B8 /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
+		7AD590861C896DE0008460B8 /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
+		7AD590881C89AB91008460B8 /* ReadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadViewController.h; sourceTree = "<group>"; };
+		7AD590891C89AB91008460B8 /* ReadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadViewController.m; sourceTree = "<group>"; };
+		7AD5908B1C89AD53008460B8 /* LesionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LesionViewController.h; sourceTree = "<group>"; };
+		7AD5908C1C89AD53008460B8 /* LesionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LesionViewController.m; sourceTree = "<group>"; };
+		7AD5908E1C89AD5D008460B8 /* SeeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeeViewController.h; sourceTree = "<group>"; };
+		7AD5908F1C89AD5D008460B8 /* SeeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeeViewController.m; sourceTree = "<group>"; };
 		7AF227621C88438E008C2F23 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		7AF227631C88525F008C2F23 /* BookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookViewController.h; sourceTree = "<group>"; };
 		7AF227641C88525F008C2F23 /* BookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookViewController.m; sourceTree = "<group>"; };
@@ -97,9 +132,33 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		7AD5906A1C891A04008460B8 /* PullingRefreshTableView */ = {
+			isa = PBXGroup;
+			children = (
+				7AD5906B1C891A04008460B8 /* blueArrow.png */,
+				7AD5906C1C891A04008460B8 /* blueArrowDown.png */,
+				7AD5906D1C891A04008460B8 /* PullingRefreshTableView.h */,
+				7AD5906E1C891A04008460B8 /* PullingRefreshTableView.m */,
+				7AD5906F1C891A04008460B8 /* ShareViewController.h */,
+				7AD590701C891A04008460B8 /* ShareViewController.m */,
+			);
+			path = PullingRefreshTableView;
+			sourceTree = "<group>";
+		};
+		7AD590711C891A04008460B8 /* ProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				7AD590721C891A04008460B8 /* ProgressHUD.bundle */,
+				7AD590731C891A04008460B8 /* ProgressHUD.h */,
+				7AD590741C891A04008460B8 /* ProgressHUD.m */,
+			);
+			path = ProgressHUD;
+			sourceTree = "<group>";
+		};
 		7AF227501C8840D3008C2F23 /* common */ = {
 			isa = PBXGroup;
 			children = (
+				7AD590801C892CB4008460B8 /* JieKo.h */,
 				7AF227621C88438E008C2F23 /* PrefixHeader.pch */,
 			);
 			path = common;
@@ -108,6 +167,8 @@
 		7AF227511C884159008C2F23 /* Libary */ = {
 			isa = PBXGroup;
 			children = (
+				7AD5906A1C891A04008460B8 /* PullingRefreshTableView */,
+				7AD590711C891A04008460B8 /* ProgressHUD */,
 			);
 			path = Libary;
 			sourceTree = SOURCE_ROOT;
@@ -116,8 +177,8 @@
 			isa = PBXGroup;
 			children = (
 				7AF227531C884160008C2F23 /* Book */,
-				7AF227571C884160008C2F23 /* BookClass */,
 				7AF2275B1C884160008C2F23 /* Discover */,
+				7AF227571C884160008C2F23 /* BookClass */,
 			);
 			path = class;
 			sourceTree = "<group>";
@@ -137,6 +198,13 @@
 			children = (
 				7AF227631C88525F008C2F23 /* BookViewController.h */,
 				7AF227641C88525F008C2F23 /* BookViewController.m */,
+				7AD590831C89610F008460B8 /* Book.plist */,
+				7AD590881C89AB91008460B8 /* ReadViewController.h */,
+				7AD590891C89AB91008460B8 /* ReadViewController.m */,
+				7AD5908B1C89AD53008460B8 /* LesionViewController.h */,
+				7AD5908C1C89AD53008460B8 /* LesionViewController.m */,
+				7AD5908E1C89AD5D008460B8 /* SeeViewController.h */,
+				7AD5908F1C89AD5D008460B8 /* SeeViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -144,6 +212,8 @@
 		7AF227551C884160008C2F23 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7AD590851C896DE0008460B8 /* Model.h */,
+				7AD590861C896DE0008460B8 /* Model.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -152,6 +222,9 @@
 			isa = PBXGroup;
 			children = (
 				7AF2276C1C885390008C2F23 /* Book.storyboard */,
+				7AD5907B1C892028008460B8 /* BookTableViewCell.h */,
+				7AD5907C1C892028008460B8 /* BookTableViewCell.m */,
+				7AD5907D1C892028008460B8 /* BookTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -302,9 +375,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AD590791C891A04008460B8 /* ProgressHUD.bundle in Resources */,
 				7AF2276F1C8853A6008C2F23 /* BookClass.storyboard in Resources */,
+				7AD5907F1C892028008460B8 /* BookTableViewCell.xib in Resources */,
+				7AD590841C89610F008460B8 /* Book.plist in Resources */,
+				7AD590761C891A04008460B8 /* blueArrowDown.png in Resources */,
 				7A9F25121C882B140061C8FD /* Assets.xcassets in Resources */,
 				7AF227711C8853B4008C2F23 /* Discover.storyboard in Resources */,
+				7AD590751C891A04008460B8 /* blueArrow.png in Resources */,
 				7AF2276D1C885390008C2F23 /* Book.storyboard in Resources */,
 				7A9F25151C882B140061C8FD /* LaunchScreen.storyboard in Resources */,
 			);
@@ -366,10 +444,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AF2276B1C885298008C2F23 /* DiscoverViewController.m in Sources */,
+				7AD590771C891A04008460B8 /* PullingRefreshTableView.m in Sources */,
 				7AF227681C885283008C2F23 /* BookClassViewController.m in Sources */,
 				7AF227651C88525F008C2F23 /* BookViewController.m in Sources */,
+				7AD590781C891A04008460B8 /* ShareViewController.m in Sources */,
+				7AD5908A1C89AB91008460B8 /* ReadViewController.m in Sources */,
+				7AD5908D1C89AD53008460B8 /* LesionViewController.m in Sources */,
 				7A9F25101C882B140061C8FD /* AppDelegate.m in Sources */,
+				7AD5907A1C891A04008460B8 /* ProgressHUD.m in Sources */,
+				7AD5907E1C892028008460B8 /* BookTableViewCell.m in Sources */,
+				7AD590901C89AD5D008460B8 /* SeeViewController.m in Sources */,
 				7A9F250D1C882B140061C8FD /* main.m in Sources */,
+				7AD590871C896DE0008460B8 /* Model.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

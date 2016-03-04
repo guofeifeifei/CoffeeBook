@@ -1,24 +1,25 @@
 //
-//  DiscoverViewController.m
-//  CoffeeBook
+//  ShareViewController.m
+//  ContactWeekend
 //
-//  Created by scjy on 16/3/3.
+//  Created by scjy on 16/1/14.
 //  Copyright © 2016年 郭飞飞. All rights reserved.
 //
 
-#import "DiscoverViewController.h"
+#import "ShareViewController.h"
 
-@interface DiscoverViewController ()
-//{
-//"fragmentId": "1028"
-//}
+@interface ShareViewController ()
+
 @end
 
-@implementation DiscoverViewController
+@implementation ShareViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+        
+    
 }
 
 - (void)didReceiveMemoryWarning {
