@@ -9,9 +9,12 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 #import <UIKit/UIKit.h>
+#import "UIViewController+Common.h"
+#import "ProgressHUD.h"
 #import "JieKo.h"
 #define kWidth [UIScreen mainScreen].bounds.size.width
 #define kHeight [UIScreen mainScreen].bounds.size.height
+#define kbookColor [UIColor colorWithRed:103.0 / 255.0 green:47.0 / 255.0 blue:42.0 /255.0 alpha:1.0];
 
 //在调试的时候，会输出（格式：文件名:行号）日志。在Release正式版本的时候，会关闭日志输出。
 #ifdef DEBUG

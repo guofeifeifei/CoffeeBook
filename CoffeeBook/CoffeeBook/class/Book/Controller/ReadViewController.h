@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ReadViewController : UIViewController
-
+@property(nonatomic, strong) NSString *readId;
+@property(nonatomic, strong) NSString *readType;
 @end

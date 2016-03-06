@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <MediaPlayer/MediaPlayer.h>
 @interface SeeViewController : UIViewController
 @property(nonatomic, copy) NSString *seeId;
+@property(nonatomic, copy) NSString *seeImage;
+@property(nonatomic, copy) NSString *seestyle;
 @end

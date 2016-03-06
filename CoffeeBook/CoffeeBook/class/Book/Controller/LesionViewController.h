@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface LesionViewController : UIViewController
-
+#import <AVFoundation/AVFoundation.h>
+@interface LesionViewController : UIViewController<AVAudioPlayerDelegate>
+@property(nonatomic, copy) NSString *lesionId;
+@property(nonatomic, copy) NSString *lesionImage;
+@property(nonatomic, copy) NSString *lesionType;
 @end

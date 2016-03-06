@@ -1,0 +1,60 @@
+{
+message = ok;
+result =     (
+{
+cname = "\U6587\U5b66";
+count = 26155;
+cover = "9787510413803.png";
+typeccn = 12;
+},
+{
+cname = "\U52b1\U5fd7";
+count = 23463;
+cover = "9787229022174.png";
+typeccn = 13;
+},
+{
+cname = "\U7ecf\U6d4e";
+count = 22261;
+cover = "9787510401800.png";
+typeccn = 14;
+},
+{
+cname = "\U751f\U6d3b";
+count = 1870;
+cover = "9787508622828.png";
+typeccn = 15;
+},
+{
+cname = "\U6587\U5316";
+count = 24369;
+cover = "9787020078127.png";
+typeccn = 16;
+},
+{
+cname = "\U5386\U53f2";
+count = 24142;
+cover = "9787563398089.png";
+typeccn = 17;
+},
+{
+cname = "\U5c11\U513f";
+count = 22971;
+cover = "9787802038219.png";
+typeccn = 18;
+},
+{
+cname = "\U79d1\U6280";
+count = 26391;
+cover = "9787508620428.png";
+typeccn = 20;
+},
+{
+cname = "\U5176\U4ed6";
+count = 66082;
+cover = "9787563398591.png";
+typeccn = 22;
+}
+);
+status = 0;
+}

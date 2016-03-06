@@ -37,6 +37,7 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"BookTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell"];
     [self.tableView launchRefreshing];
     [self loadData];
+    
   
     
     
@@ -49,6 +50,7 @@
     
     BookTableViewCell *bookcell = [self.tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     bookcell.model = self.bookArray[indexPath.row];
+    bookcell.selectionStyle =  UITableViewCellSelectionStyleNone;
     return bookcell;
     
     
@@ -57,27 +59,42 @@
 //点击进入
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (self.typeArray[indexPath.row] > 0) {
+        Model *model = [[Model alloc] init];
+        model = self.bookArray[indexPath.row];
     switch ([self.typeArray[indexPath.row] integerValue]) {
-        case BookListTypeRead:
+        case BookListTypeRead:{
             NSLog(@"%ld", BookListTypeRead);//进入看书网页
-          
-            break;
-        case BookListTypeLesion:{
-             NSLog(@"%ld", BookListTypeLesion);//进入听书网页
-            SeeViewController *seeView = [[SeeViewController alloc] init];
-            seeView.seeId = self.idArray[indexPath.row];
-            [self.navigationController pushViewController:seeView animated:YES];
+            ReadViewController *readVC = [[ReadViewController alloc] init];
+            readVC.readId = self.idArray[indexPath.row];
+            readVC.readType = model.typletitle;
+            [self.navigationController pushViewController:readVC animated:YES];
+            
         }
             break;
-        case BookListTypeSee:
+        case BookListTypeLesion:{
+            LesionViewController *lesion = [[LesionViewController alloc] init];
+            lesion.lesionId = self.idArray[indexPath.row];
+            lesion.lesionImage = model.bookImage;
+            lesion.lesionType = model.typletitle;
+            [self.navigationController pushViewController:lesion animated:YES];
+        }
+            break;
+        case BookListTypeSee:{
             
             NSLog(@"%ld", BookListTypeSee);//进入看视频网页
-         
-            break;
-        default:
+            
+            NSLog(@"%ld", BookListTypeLesion);//进入听书网页
+            SeeViewController *seeView = [[SeeViewController alloc] init];
+            seeView.seeImage = model.bookImage;
+            seeView.seestyle = model.typletitle;
+            
+            seeView.seeId = self.idArray[indexPath.row];
+        
+            [self.navigationController pushViewController:seeView animated:YES];
+        }
+
             break;
     }
-    
     }
 }
 
@@ -115,6 +132,7 @@
     NSDictionary *params = @{@"sinceId" : @"0", @"pageSize" : @"20", @"maxId": self.maxId};
     [sessionManager POST:bookJieKo parameters:params progress:^(NSProgress * _Nonnull uploadProgress) {
         
+        
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if (self.refreshing) {
             if (self.bookArray.count > 0) {
@@ -137,7 +155,7 @@
                    [self.typeArray addObject:dict[@"type"]];
                    
         }
-        NSLog(@"%@", responseObject);
+       // NSLog(@"%@", responseObject);
         [self.tableView reloadData];
        
         
@@ -191,6 +209,19 @@
     return _typeArray;
     
     
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:YES];
+    self.navigationController.navigationBar.hidden = YES;
+    
+    self.tabBarController.tabBar.hidden = YES;
+}
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:YES];
+    self.navigationController.navigationBar.hidden = NO;
+    
+    self.tabBarController.tabBar.hidden = NO;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

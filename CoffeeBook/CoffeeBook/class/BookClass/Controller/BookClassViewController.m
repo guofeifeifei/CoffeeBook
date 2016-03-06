@@ -7,9 +7,12 @@
 //
 
 #import "BookClassViewController.h"
-
-@interface BookClassViewController ()
-
+#import <AFNetworking/AFHTTPSessionManager.h>
+#import "BookClassCollectionViewCell.h"
+#import "BookClassModel.h"
+@interface BookClassViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
+@property(nonatomic, strong) NSMutableArray *array;
+@property(nonatomic, strong) UICollectionView *collection;
 @end
 
 @implementation BookClassViewController
@@ -17,8 +20,111 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self loadData];
+    [self.view addSubview:self.collection];
+    
 }
 
+
+- (void)loadData{
+    AFHTTPSessionManager *sessionManager = [AFHTTPSessionManager manager];
+    sessionManager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
+    [sessionManager GET:bookClassJieko parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+       // [ProgressHUD show:@"正在加载..."];
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+       // NSLog(@"%@", responseObject);
+        NSDictionary *dic = responseObject;
+        NSString *message = dic[@"message"];
+        
+        if ([message isEqualToString:@"ok"]) {
+            NSArray *array = dic[@"result"];
+            for (NSDictionary *dict in array) {
+                BookClassModel *model = [[BookClassModel alloc] initWithDictionary:dict];
+                [self.array addObject:model];
+            }
+            NSLog(@"%@", self.array);
+            
+        }else{
+           // [ProgressHUD showError:@"网络有误"];
+            
+            
+            
+          
+        }
+        
+        [self.collection reloadData];
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"%@", error);
+    }];
+    
+}
+#pragma mark ------- UICollectionViewDataSource
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+   
+    return 9;
+}
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
+    return 1;
+}
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    UINib *nib = [UINib nibWithNibName:@"BookClassCollectionViewCell"
+                                bundle: [NSBundle mainBundle]];
+       [collectionView registerNib:nib forCellWithReuseIdentifier:@"itemIdentifier"];
+    
+    BookClassCollectionViewCell *cell = [[BookClassCollectionViewCell alloc] init];
+    cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"itemIdentifier" forIndexPath:indexPath];
+      if (self.array.count > 0) {
+    cell.model = self.array[indexPath.row];
+    }
+    return cell;
+    
+    
+    
+}
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+}
+- (UICollectionView *)collection{
+    if (_collection == nil) {
+        UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+        layout.scrollDirection = UICollectionViewScrollDirectionVertical;
+        layout.itemSize = CGSizeMake(kWidth/2, 150);
+        self.collection = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, kWidth, kHeight - 200)
+                                                 collectionViewLayout:layout];
+        self.collection.delegate = self;
+        self.collection.dataSource = self;
+        //行间距
+        layout.minimumLineSpacing = 3;
+        //section的边距
+        layout.minimumInteritemSpacing = 1;
+        //section的边距
+        layout.sectionInset = UIEdgeInsetsMake(3, 3, 3, 3);
+        
+        self.collection.backgroundColor = [UIColor whiteColor];
+
+    }
+    return _collection;
+}
+
+- (NSMutableArray *)array{
+    if (_array == nil) {
+        self.array = [NSMutableArray new];
+    }
+    return _array;
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:YES];
+    self.navigationController.navigationBar.hidden = YES;
+    
+    self.tabBarController.tabBar.hidden = YES;
+}
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:YES];
+    self.navigationController.navigationBar.hidden = NO;
+    
+    self.tabBarController.tabBar.hidden = NO;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
