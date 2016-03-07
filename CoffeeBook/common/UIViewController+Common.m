@@ -18,4 +18,15 @@
 - (void)back{
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
+- (void)swipeLeftAction{
+    UISwipeGestureRecognizer *recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(leftBack)];
+    recognizer.direction = UISwipeGestureRecognizerDirectionLeft;
+    [self.view addGestureRecognizer:recognizer];
+    
+    
+}
+- (void)leftBack{
+    
+ 
+}
 @end

@@ -82,12 +82,13 @@
         [sessionManager POST:seeVCJieKo parameters:params progress:^(NSProgress * _Nonnull uploadProgress) {
          
         } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-            [ProgressHUD showSuccess:@"加载完成"];
+           
             self.dic = responseObject;
                         GFFLog(@"%@",self.dic);
             
             [self moviewLoading];
             [self textLodaing];
+             [ProgressHUD showSuccess:@"加载完成"];
 
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
             [ProgressHUD showError:@"网络有误"];

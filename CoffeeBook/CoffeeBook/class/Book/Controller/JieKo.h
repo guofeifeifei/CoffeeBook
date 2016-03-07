@@ -24,6 +24,12 @@ typedef NS_ENUM(NSInteger, BookListType) {
 #define discoverJieKo @"http://app.readerday.com/api/auth/authsrv/findlistdata?pagesize=3&pagenum=1&userid=0"
 //分类
 #define bookClassJieko @"http://app.readerday.com/api/read/readsrv/allccn?"
-
-
+//图片接口
+#define imageJieko @"http://img.readerday.com/cover/"
+//分类音频界面
+#define lessionJieko @"http://app.readerday.com/api/read/readsrv/bookindex?pagesize=10&pagenum=1&userid=0"
+//分类进入页面
+#define classListJieko @"http://app.readerday.com/api/read/readsrv/ccnbook?pagesize=10"
+//进入书
+#define bookdetailJieko @"http://app.readerday.com/api/read/readsrv/booknewdigests?pagesize=5&pagenum=1&userid=0"
 #endif /* JieKo_h */

@@ -9,10 +9,10 @@
 #import "BookClassCollectionViewCell.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 @interface BookClassCollectionViewCell()
-@property (weak, nonatomic) IBOutlet UIImageView *ImageView;
 
-@property (weak, nonatomic) IBOutlet UILabel *classTitleLable;
-@property (weak, nonatomic) IBOutlet UILabel *readNumberLable;
+
+
+
 
 @end
 @implementation BookClassCollectionViewCell
@@ -22,7 +22,7 @@
 }
 
 - (void)setModel:(BookClassModel *)model{
-    NSString *urlstring = [NSString stringWithFormat:@"%@/%@", bookClassJieko, model.classImage];
+    NSString *urlstring = [NSString stringWithFormat:@"%@%@", imageJieko, model.classImage];
     NSLog(@"%@", urlstring);
     [self.ImageView sd_setImageWithURL:[NSURL URLWithString:urlstring] completed:nil];
     self.classTitleLable.text = model.className;

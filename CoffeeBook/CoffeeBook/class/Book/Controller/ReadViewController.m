@@ -33,10 +33,11 @@
     [sessionManager POST:seeVCJieKo parameters:pamars progress:^(NSProgress * _Nonnull uploadProgress) {
        
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        [ProgressHUD showSuccess:@"加载完成"];
+        
         NSLog(@"%@", responseObject);
         self.dic = responseObject;
         [self loadTextView];
+        [ProgressHUD showSuccess:@"加载完成"];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"%@", error);
         [ProgressHUD showError:@"网络有误"];
