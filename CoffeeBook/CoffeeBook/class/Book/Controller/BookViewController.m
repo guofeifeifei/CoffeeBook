@@ -13,11 +13,13 @@
 #import "LesionViewController.h"
 #import "SeeViewController.h"
 #import "Model.h"
+#import "ProgressHUD.h"
+#import "MJRefresh.h"
 #import <AFNetworking/AFHTTPSessionManager.h>
 
-@interface BookViewController ()<UITableViewDataSource, UITableViewDelegate, PullingRefreshTableViewDelegate>
+@interface BookViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property(nonatomic, strong) NSMutableArray *idArray;
-@property(nonatomic, strong) PullingRefreshTableView *tableView;
+@property(nonatomic, strong) UITableView *tableView;
 @property(nonatomic, assign) BOOL refreshing;
 @property(nonatomic, strong) NSMutableArray *typeArray;
 @property(nonatomic, strong) NSMutableArray *bookArray;
@@ -35,9 +37,33 @@
     
     //注册
     [self.tableView registerNib:[UINib nibWithNibName:@"BookTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell"];
-    [self.tableView launchRefreshing];
+   
     [self loadData];
+    [self.tableView.mj_header beginRefreshing];
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        self.refreshing = YES;
+      
+        self.maxId = @"0";
+        [self loadData];
+        [self.tableView reloadData];
+        [self.tableView.mj_header endRefreshing ];
+    }];
     
+    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        self.refreshing  = NO;
+        
+        NSInteger page = [self.idArray[19] integerValue];
+        
+        self.maxId = [NSString stringWithFormat:@"%ld", (long)page];
+        
+        [self loadData];
+        [self.tableView reloadData];
+        
+        [self.tableView.mj_footer endRefreshing];
+    }];
+
+    
+
   
     
     
@@ -49,7 +75,10 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     BookTableViewCell *bookcell = [self.tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    bookcell.model = self.bookArray[indexPath.row];
+    if (indexPath.row < self.bookArray.count ){
+         bookcell.model = self.bookArray[indexPath.row];
+    }
+   
     bookcell.selectionStyle =  UITableViewCellSelectionStyleNone;
     return bookcell;
     
@@ -105,25 +134,6 @@
     self.maxId = @"0";
     
 }
-//上拉刷新
-- (void)pullingTableViewDidStartLoading:(PullingRefreshTableView *)tableView{
-    self.refreshing  = NO;
-    [self performSelector:@selector(loadData) withObject:nil afterDelay:1.0];
-    NSInteger page = [self.idArray[19] integerValue];
-    
-    self.maxId = [NSString stringWithFormat:@"%ld", (long)page];
-   
-    
-}
-//手指开始拖动方法
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    [self.tableView tableViewDidScroll:scrollView];
-}
-//手指结束拖动方法
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
-    [self.tableView tableViewDidEndDragging:scrollView];
-}
-//加载数据{"maxId":"1012","pageSize":"20"}{"maxId":"991","pageSize":"20"}
 - (void)loadData{
     
     AFHTTPSessionManager *sessionManager = [AFHTTPSessionManager manager];
@@ -164,14 +174,12 @@
         NSLog(@"%@",error);
 
     }];
-//完成加载
-    [self.tableView tableViewDidFinishedLoading];
-    self.tableView.reachedTheEnd = NO;
+
 }
 #pragma mark ------- LazyLoading
-- (PullingRefreshTableView *)tableView{
+- (UITableView *)tableView{
     if (_tableView == nil) {
-        self.tableView = [[PullingRefreshTableView alloc] initWithFrame:CGRectMake(0, 64, kWidth, kHeight - 64) pullingDelegate:self];
+        self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kWidth, kHeight - 64) ];
         
         self.tableView.delegate = self;
         self.tableView.dataSource = self;
@@ -180,9 +188,6 @@
         self.tableView.separatorColor = [UIColor whiteColor];
     }
     return _tableView;
-    
-    
-    
 }
 - (NSMutableArray *)bookArray{
     if (_bookArray == nil) {
@@ -190,9 +195,6 @@
         
     }
     return _bookArray;
-    
-    
-    
     
 }
 - (NSMutableArray *)idArray{

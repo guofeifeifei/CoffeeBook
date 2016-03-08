@@ -7,6 +7,7 @@
 //
 
 #import "ReadViewController.h"
+#import "ProgressHUD.h"
 #import <AFNetworking/AFHTTPSessionManager.h>
 @interface ReadViewController ()
 @property(nonatomic, strong) NSDictionary *dic;

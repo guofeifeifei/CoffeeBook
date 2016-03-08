@@ -10,6 +10,8 @@
 #import "ClassListTableViewCell.h"
 #import "BookDetailViewController.h"
 #import "BookList.h"
+#import "ProgressHUD.h"
+#import "MJRefresh.h"
 #import <AFNetworking/AFHTTPSessionManager.h>
 @interface ClassListViewController ()<UITableViewDataSource, UITableViewDelegate>{
     NSInteger _pagenum;
@@ -100,7 +102,9 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     ClassListTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    if (indexPath.row < self.array.count ){
     cell.model = self.array[indexPath.row];
+    }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }

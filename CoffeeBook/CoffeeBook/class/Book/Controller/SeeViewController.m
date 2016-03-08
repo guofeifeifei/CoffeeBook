@@ -9,6 +9,7 @@
 #import "SeeViewController.h"
 #import <AFNetworking/AFHTTPSessionManager.h>
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "ProgressHUD.h"
 @interface SeeViewController ()<UIWebViewDelegate>
 {
     int _count;

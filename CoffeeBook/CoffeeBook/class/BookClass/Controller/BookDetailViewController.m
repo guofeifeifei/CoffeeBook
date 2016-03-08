@@ -9,6 +9,8 @@
 #import "BookDetailViewController.h"
 #import <AFNetworking/AFHTTPSessionManager.h>
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "ProgressHUD.h"
+#import "MJRefresh.h"
 @interface BookDetailViewController ()<AVAudioPlayerDelegate>{
     NSInteger _count;
 }
@@ -29,7 +31,7 @@
     [self swipebackAction];
     _count = 0;
     self.title = self.booName;
-    self.navigationItem.hidesBackButton = YES;
+//    self.navigationItem.hidesBackButton = YES;
     [self loadData];
     
 }
@@ -47,11 +49,16 @@
             NSDictionary *resultDic = dic[@"result"];
             self.detailedDic = resultDic[@"detailed"];
             NSArray *array = resultDic[@"digests"];
-            self.digestsDic = array[0];
+            if (array.count > 0) {
+                self.digestsDic = array[0];
+            }
+           
             [self.view addSubview:self.webView];
-
-                   }
-        [ProgressHUD showSuccess:@"加载完成"];
+[ProgressHUD showSuccess:@"加载完成"];
+        }else{
+            [ProgressHUD show:@"网络有误"];
+        }
+        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         [ProgressHUD showError:@"网络有误"];
         
@@ -90,7 +97,8 @@
         
         self.webView.scrollView.bounces = NO;
         //判断是否有音频
-        if (![self.detailedDic[@"bookvideo"] isEqualToString:@""]) {
+        NSString *vistring = self.detailedDic[@"bookvideo"];
+        if (!(vistring)) {
             [self.audioPlayer prepareToPlay];
             [self.webView.scrollView addSubview:self.button];
             

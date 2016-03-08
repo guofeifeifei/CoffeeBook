@@ -10,9 +10,9 @@
 #define PrefixHeader_pch
 #import <UIKit/UIKit.h>
 #import "UIViewController+Common.h"
-#import "ProgressHUD.h"
+
 #import "JieKo.h"
-#import "MJRefresh.h"
+
 #define kWidth [UIScreen mainScreen].bounds.size.width
 #define kHeight [UIScreen mainScreen].bounds.size.height
 #define kbookColor [UIColor colorWithRed:103.0 / 255.0 green:47.0 / 255.0 blue:42.0 /255.0 alpha:1.0];

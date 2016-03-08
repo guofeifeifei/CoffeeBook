@@ -26,6 +26,8 @@ typedef NS_ENUM(NSInteger, BookListType) {
 #define bookClassJieko @"http://app.readerday.com/api/read/readsrv/allccn?"
 //图片接口
 #define imageJieko @"http://img.readerday.com/cover/"
+
+
 //分类音频界面
 #define lessionJieko @"http://app.readerday.com/api/read/readsrv/bookindex?pagesize=10&pagenum=1&userid=0"
 //分类进入页面

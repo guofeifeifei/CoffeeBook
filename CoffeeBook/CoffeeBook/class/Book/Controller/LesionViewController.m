@@ -7,6 +7,7 @@
 //
 
 #import "LesionViewController.h"
+#import "ProgressHUD.h"
 #import <AFNetworking/AFHTTPSessionManager.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 @interface LesionViewController (){

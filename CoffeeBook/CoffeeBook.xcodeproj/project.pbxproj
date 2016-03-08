@@ -37,6 +37,8 @@
 		7A9F25101C882B140061C8FD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9F250F1C882B140061C8FD /* AppDelegate.m */; };
 		7A9F25121C882B140061C8FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A9F25111C882B140061C8FD /* Assets.xcassets */; };
 		7A9F25151C882B140061C8FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A9F25131C882B140061C8FD /* LaunchScreen.storyboard */; };
+		7AC031B91C8E7CB40073CFB8 /* discover.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AC031B81C8E7CB40073CFB8 /* discover.plist */; };
+		7AC031C21C8EB0770073CFB8 /* DisModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AC031C11C8EB0770073CFB8 /* DisModel.m */; };
 		7AC93F1D1C8C0825003BCEF8 /* UIViewController+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AC93F1C1C8C0825003BCEF8 /* UIViewController+Common.m */; };
 		7AC93F2E1C8C33A0003BCEF8 /* DisListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AC93F2C1C8C33A0003BCEF8 /* DisListTableViewCell.m */; };
 		7AC93F2F1C8C33A0003BCEF8 /* DisListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AC93F2D1C8C33A0003BCEF8 /* DisListTableViewCell.xib */; };
@@ -128,6 +130,9 @@
 		7A9F25111C882B140061C8FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A9F25141C882B140061C8FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7A9F25161C882B140061C8FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7AC031B81C8E7CB40073CFB8 /* discover.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = discover.plist; sourceTree = "<group>"; };
+		7AC031C01C8EB0770073CFB8 /* DisModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisModel.h; sourceTree = "<group>"; };
+		7AC031C11C8EB0770073CFB8 /* DisModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisModel.m; sourceTree = "<group>"; };
 		7AC93F1B1C8C0825003BCEF8 /* UIViewController+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Common.h"; sourceTree = "<group>"; };
 		7AC93F1C1C8C0825003BCEF8 /* UIViewController+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Common.m"; sourceTree = "<group>"; };
 		7AC93F2B1C8C33A0003BCEF8 /* DisListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisListTableViewCell.h; sourceTree = "<group>"; };
@@ -496,6 +501,7 @@
 			children = (
 				7AF227691C885297008C2F23 /* DiscoverViewController.h */,
 				7AF2276A1C885298008C2F23 /* DiscoverViewController.m */,
+				7AC031B81C8E7CB40073CFB8 /* discover.plist */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -503,6 +509,8 @@
 		7AF2275D1C884160008C2F23 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7AC031C01C8EB0770073CFB8 /* DisModel.h */,
+				7AC031C11C8EB0770073CFB8 /* DisModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -597,6 +605,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AC031B91C8E7CB40073CFB8 /* discover.plist in Resources */,
 				7A007FD71C8D264A004E483D /* ClassListTableViewCell.xib in Resources */,
 				7AD590791C891A04008460B8 /* ProgressHUD.bundle in Resources */,
 				7AF2276F1C8853A6008C2F23 /* BookClass.storyboard in Resources */,
@@ -698,6 +707,7 @@
 				7A007FD61C8D264A004E483D /* ClassListTableViewCell.m in Sources */,
 				7AD5907E1C892028008460B8 /* BookTableViewCell.m in Sources */,
 				7AD590901C89AD5D008460B8 /* SeeViewController.m in Sources */,
+				7AC031C21C8EB0770073CFB8 /* DisModel.m in Sources */,
 				7A007FBE1C8D1C81004E483D /* MJRefreshBackFooter.m in Sources */,
 				7A007FC71C8D1C81004E483D /* MJRefreshBackStateFooter.m in Sources */,
 				7A007FC81C8D1C81004E483D /* MJRefreshGifHeader.m in Sources */,

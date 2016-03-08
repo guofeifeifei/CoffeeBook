@@ -10,6 +10,8 @@
 #import <AFNetworking/AFHTTPSessionManager.h>
 #import "BookClassCollectionViewCell.h"
 #import "BookClassModel.h"
+#import "ProgressHUD.h"
+#import "MJRefresh.h"
 #import "ClassListViewController.h"
 @interface BookClassViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 @property(nonatomic, strong) NSMutableArray *array;
@@ -24,12 +26,12 @@
     // Do any additional setup after loading the view.
     [self loadData];
     [self.view addSubview:self.collection];
-    
+    [self.collection.mj_header beginRefreshing];
     
     self.collection.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         // 进入刷新状态后会自动调用这个block
         [self.collection reloadData];
-        
+        [self loadData];
         // 结束刷新
         [self.collection.mj_header endRefreshing];
     }];
@@ -79,7 +81,7 @@
 #pragma mark ------- UICollectionViewDataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
    
-    return self.array.count + 1;
+    return self.array.count ;
 }
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     return 1;
@@ -90,14 +92,10 @@
     
     BookClassCollectionViewCell *cell = [[BookClassCollectionViewCell alloc] init];
     cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"itemIdentifier" forIndexPath:indexPath];
-      if (self.array.count > 0) {
-          if (indexPath.row == self.array.count) {
-           cell.classTitleLable.text = @"音频";
-           cell.readNumberLable.text = @"";
-              
-          }else{
+      if (indexPath.row < self.array.count ) {
+         
     cell.model = self.array[indexPath.row];
-          }
+          
     }
     return cell;
     
