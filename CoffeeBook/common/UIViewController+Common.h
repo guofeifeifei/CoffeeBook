@@ -11,4 +11,5 @@
 @interface UIViewController (Common)
 - (void)swipebackAction;
 - (void)swipeLeftAction;
+- (void)showBackButton;
 @end

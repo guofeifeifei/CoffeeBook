@@ -10,6 +10,7 @@
 #import "BookViewController.h"
 #import "BookClassViewController.h"
 #import "DiscoverViewController.h"
+#import <BmobSDK/Bmob.h>
 @interface AppDelegate ()
 @property(nonatomic, strong) UITabBarController *tabBarVC;
 @end
@@ -18,6 +19,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [Bmob registerWithAppKey:kBmobAppKey];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     self.tabBarVC = [[UITabBarController alloc] init];

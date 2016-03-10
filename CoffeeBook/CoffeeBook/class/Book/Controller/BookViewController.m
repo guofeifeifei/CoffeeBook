@@ -15,6 +15,7 @@
 #import "Model.h"
 #import "ProgressHUD.h"
 #import "MJRefresh.h"
+#import "ZMYNetManager.h"
 #import <AFNetworking/AFHTTPSessionManager.h>
 
 @interface BookViewController ()<UITableViewDataSource, UITableViewDelegate>
@@ -135,6 +136,18 @@
     
 }
 - (void)loadData{
+    AFNetworkReachabilityManager *netManager = [AFNetworkReachabilityManager sharedManager];
+    [netManager startMonitoring];
+    [netManager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        if (status == AFNetworkReachabilityStatusNotReachable) {
+            [[[UIAlertView alloc] initWithTitle:@"提示" message:@"网络链接错误,请检查网络链接" delegate:nil cancelButtonTitle:@"我知道了" otherButtonTitles:nil, nil]show];
+            
+            return ;
+        }
+            
+            
+        
+    }];
     
     AFHTTPSessionManager *sessionManager = [AFHTTPSessionManager manager];
     sessionManager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
@@ -215,16 +228,10 @@
 
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:YES];
-    self.navigationController.navigationBar.hidden = YES;
-    
-    self.tabBarController.tabBar.hidden = YES;
+
+    [ProgressHUD dismiss];
 }
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:YES];
-    self.navigationController.navigationBar.hidden = NO;
-    
-    self.tabBarController.tabBar.hidden = NO;
-}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

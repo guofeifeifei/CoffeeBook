@@ -12,17 +12,15 @@
 #import "BookDetailViewController.h"
 #import "ProgressHUD.h"
 #import "MJRefresh.h"
+#import "UserViewController.h"
 #import <AFNetworking/AFHTTPSessionManager.h>
 @interface DiscoverViewController ()<UITableViewDataSource, UITableViewDelegate>{
     NSInteger _pageNum;
     BOOL _refresh;
-    NSString *_title;
-    NSString *_id;
-}
+   }
 @property(nonatomic, strong) UITableView *tableView;
-@property(nonatomic, strong) NSString *bookTitle;
-@property(nonatomic, strong) NSString *bookid;
-@property(nonatomic, strong) NSMutableArray *bookNameArray;
+@property(nonatomic, strong) NSMutableArray *idUserArray;
+
 @property(nonatomic, strong) NSMutableArray *array;
 @property(nonatomic, strong) NSMutableArray *idArray;
 //{
@@ -35,8 +33,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _pageNum = 1;
-    self.bookTitle = @"";
-    self.bookid = @"";
+    self.view.backgroundColor = kbookColor;
     // Do any additional setup after loading the view.
     [self.view addSubview:self.tableView];
     //注册
@@ -68,7 +65,7 @@
     AFHTTPSessionManager *sessionManager = [AFHTTPSessionManager manager];
     sessionManager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
     [ProgressHUD show:@"正在加载..."];
-    [sessionManager GET:discoverJieKo parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+    [sessionManager GET:[NSString stringWithFormat:@"%@&pagenum=%ld", discoverJieKo,_pageNum] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"%@", responseObject);
@@ -86,7 +83,8 @@
             
                 [self.array addObject:model];
                 [self.idArray addObject:dict[@"bookid"]];
-                [self.bookNameArray addObject:dict[@"bookname"]];
+                
+                [self.idUserArray addObject:dict[@"contentid"]];
             }
             NSLog(@"%@", self.array);
             
@@ -124,21 +122,28 @@
         cell.model = self.array[indexPath.row];
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    [cell.nickname addTarget:self action:@selector(userAction) forControlEvents:UIControlEventTouchUpInside];
-    [cell.BookDetailButton addTarget:self action:@selector(bookAction) forControlEvents:UIControlEventTouchUpInside];
-    self.bookid = self.idArray[indexPath.row];
-    self.bookTitle = self.bookNameArray[indexPath.row];
-    return cell;
-}
-- (void)userAction{
     
+//    [cell.nickname addTarget:self action:@selector(userAction:) forControlEvents:UIControlEventTouchUpInside];
+//    cell.nickname.tag = indexPath.row;
+    
+    [cell.BookDetailButton addTarget:self action:@selector(bookAction:) forControlEvents:UIControlEventTouchUpInside];
+    cell.BookDetailButton.tag = indexPath.row;
+      return cell;
 }
-- (void)bookAction {
-   
+
+- (void)userAction:(UIButton *)btn{
+    UIStoryboard *userStory = [UIStoryboard storyboardWithName:@"UserStoryBoard" bundle:nil];
+    UserViewController *userVC = [userStory instantiateViewControllerWithIdentifier:@"user"];
+    userVC.idUser = self.idUserArray[btn.tag];
+    [self.navigationController pushViewController:userVC animated:YES];
+}
+- (void)bookAction:(UIButton *)btn {
+    DisModel *model  = self.array[btn.tag];
     
     BookDetailViewController *bookDetailVC = [BookDetailViewController alloc];
-    bookDetailVC.bookIdstring = [NSString stringWithFormat:@"%@", self.bookid];
-    bookDetailVC.booName = self.bookTitle;
+    bookDetailVC.bookIdstring = [NSString stringWithFormat:@"%@", self.idArray[btn.tag]];
+    bookDetailVC.booName = model.bookName;
+    NSLog(@"%@", model.bookName);
     [self.navigationController pushViewController:bookDetailVC animated:YES];
     
     
@@ -164,7 +169,7 @@
     static dispatch_once_t onceToken;
     //只会走一次
     dispatch_once(&onceToken, ^{
-        cell = (DisListTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"cell"];
+        cell = (DisListTableViewCell *)[self.tableView dequeueReusableCellWithIdentifier:@"cell"];
     });
     CGFloat height = [cell calulateHeightWithTitle:model.nickname desip:model.detail];
     
@@ -191,29 +196,24 @@
     
     
 }
-- (NSMutableArray *)bookNameArray{
-    if (_bookNameArray == nil) {
-        _bookNameArray = [NSMutableArray new];
-    }
-    return _bookNameArray;
-}
+
 
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:YES];
-    self.navigationController.navigationBar.hidden = YES;
+
+   
+        [ProgressHUD dismiss];
+}
+
+
+- (NSMutableArray *)idUserArray{
+    if (_idUserArray == nil) {
+        _idUserArray = [NSMutableArray new];
+    }
+    return _idUserArray;
     
-    self.tabBarController.tabBar.hidden = YES;
 }
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:YES];
-    self.navigationController.navigationBar.hidden = NO;
-    
-    self.tabBarController.tabBar.hidden = NO;
-}
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+
 
 /*
 #pragma mark - Navigation

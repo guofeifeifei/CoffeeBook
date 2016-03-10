@@ -12,6 +12,7 @@
 #import "BookClassModel.h"
 #import "ProgressHUD.h"
 #import "MJRefresh.h"
+#import "SetViewController.h"
 #import "ClassListViewController.h"
 @interface BookClassViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 @property(nonatomic, strong) NSMutableArray *array;
@@ -145,16 +146,23 @@
     }
     return _arrayccn;
 }
+
+- (IBAction)setingViewAction:(id)sender {
+
+    
+        UIStoryboard *setStoryboard = [UIStoryboard storyboardWithName:@"SetStoryboard" bundle:nil];
+        SetViewController *setVC = [setStoryboard instantiateViewControllerWithIdentifier:@"setView"];
+    [self.navigationController pushViewController:setVC animated:YES];
+
+}
+
+
 - (void)viewWillDisappear:(BOOL)animated{
-    [super viewWillDisappear:YES];
-       self.tabBarController.tabBar.hidden = YES;
-    
-    
-}
-- (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
-      self.tabBarController.tabBar.hidden = NO;
+    
+    [ProgressHUD dismiss];
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

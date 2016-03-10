@@ -24,7 +24,7 @@
                             <rect key="frame" x="166" y="2" width="44" height="40"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="1"/>
-                            <state key="normal" title="Button" image="40"/>
+                            <state key="normal" title="Button" image="bookclub40"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                     <integer key="value" value="20"/>
@@ -32,13 +32,6 @@
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                             </userDefinedRuntimeAttributes>
                         </button>
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="Z9k-ce-w5b">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="kp7-Xt-ONH">
-                                <rect key="frame" x="334" y="9" width="25" height="25"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="btn_search"/>
-                            </button>
-                        </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
@@ -68,7 +61,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="40" width="40" height="40"/>
-        <image name="btn_search" width="34" height="34"/>
+        <image name="bookclub40" width="40" height="40"/>
     </resources>
 </document>

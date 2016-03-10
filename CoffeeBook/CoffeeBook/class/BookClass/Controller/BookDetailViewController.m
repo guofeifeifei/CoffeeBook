@@ -27,6 +27,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
+    [self showBackButton];
     // Do any additional setup after loading the view.
     [self swipebackAction];
     _count = 0;
@@ -86,7 +87,7 @@
     if (_webView == nil) {
         
         self.webView = [[UIWebView alloc] initWithFrame:CGRectMake(10, 100, kWidth - 20, kHeight - 120)];
-        self.webView.backgroundColor = [UIColor whiteColor];
+        self.webView.backgroundColor = [UIColor redColor];
         self.webView.scrollView.contentInset = UIEdgeInsetsMake(200, 0, 0, 0);
         self.webView.scrollView.backgroundColor = [UIColor whiteColor];
         
@@ -160,12 +161,14 @@
 
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:YES];
-    self.navigationController.navigationBar.hidden = YES;
-    
+    self.tabBarController.tabBar.hidden = NO;
+    [ProgressHUD dismiss];
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
-    self.navigationController.navigationBar.hidden = NO;
+   
+    self.tabBarController.tabBar.hidden = YES;
+
     
 
     

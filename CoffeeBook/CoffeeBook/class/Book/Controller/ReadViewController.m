@@ -76,11 +76,22 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:YES];
+    self.navigationController.navigationBar.hidden = NO ;
     
+    self.tabBarController.tabBar.hidden = NO ;
     [ProgressHUD dismiss];
+    
 }
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:YES];
+    self.navigationController.navigationBar.hidden = YES;
+    
+    self.tabBarController.tabBar.hidden = YES;
+}
+
 /*
 #pragma mark - Navigation
 

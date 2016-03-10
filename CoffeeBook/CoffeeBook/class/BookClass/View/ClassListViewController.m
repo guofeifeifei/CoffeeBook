@@ -28,7 +28,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     _pagenum = 1;
-    
+    [self showBackButton];
     self.navigationItem.title = self.stypeTitle;
     self.navigationItem.hidesBackButton = YES;
     [self.view addSubview:self.tableView];
@@ -47,7 +47,7 @@
     }];
    
     self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
-        _pagenum = +1;
+        _pagenum += 1;
         _refresh = NO;
         [self loadData];
         [self.tableView reloadData];
@@ -145,6 +145,21 @@
     }
     return _bookIdArray;
 }
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:YES];
+    //self.navigationController.navigationBar.hidden = NO ;
+    
+    self.tabBarController.tabBar.hidden = NO ;
+    [ProgressHUD dismiss];
+    
+}
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:YES];
+  
+    
+    self.tabBarController.tabBar.hidden = YES;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

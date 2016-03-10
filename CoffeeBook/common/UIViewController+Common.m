@@ -27,6 +27,21 @@
 }
 - (void)leftBack{
     
+    
  
+}
+- (void)showBackButton{
+    UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    backBtn.frame  = CGRectMake(0, 0, 44, 44);
+    [backBtn setImage:[UIImage imageNamed:@"bookclub_toolIcon_back60"] forState:UIControlStateNormal];
+
+    [backBtn setImageEdgeInsets:UIEdgeInsetsMake(0, -15, 0, 0)];
+    [backBtn addTarget:self action:@selector(backButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *leftBarBtn = [[UIBarButtonItem alloc] initWithCustomView:backBtn];
+    self.navigationItem.leftBarButtonItem = leftBarBtn;
+
+}
+- (void)backButtonAction:(UIButton *)btn{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 @end
