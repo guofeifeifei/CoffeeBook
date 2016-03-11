@@ -8,6 +8,7 @@
 
 #import "ReadViewController.h"
 #import "ProgressHUD.h"
+#import "CollectView.h"
 #import <AFNetworking/AFHTTPSessionManager.h>
 @interface ReadViewController ()
 @property(nonatomic, strong) NSDictionary *dic;
@@ -23,7 +24,8 @@
     [self swipebackAction];
     self.title = self.readType;
     [self loadData];
-    
+    CollectView *collectView = [[CollectView alloc] initWithFrame:CGRectMake(0, kHeight - 40, kWidth, 40)];
+    [self.view addSubview:collectView];
 }
 - (void)loadData{
     AFHTTPSessionManager *sessionManager = [AFHTTPSessionManager manager];

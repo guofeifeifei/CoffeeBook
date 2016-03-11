@@ -8,6 +8,7 @@
 
 #import "LesionViewController.h"
 #import "ProgressHUD.h"
+#import "CollectView.h"
 #import <AFNetworking/AFHTTPSessionManager.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 @interface LesionViewController (){
@@ -38,6 +39,8 @@
      UIImageView *imageVC = [[UIImageView alloc] initWithFrame:CGRectMake(20 , 20 +64 + 50, kWidth - 40, 127)];
     [imageVC sd_setImageWithURL:[NSURL URLWithString:self.lesionImage] placeholderImage:nil];
     [self.view addSubview:imageVC];
+    CollectView *collectView = [[CollectView alloc] initWithFrame:CGRectMake(0, kHeight - 40, kWidth, 40)];
+    [self.view addSubview:collectView];
     }
 - (void)moviewLoading{
    

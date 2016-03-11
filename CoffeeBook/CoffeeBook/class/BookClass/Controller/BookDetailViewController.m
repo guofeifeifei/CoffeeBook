@@ -11,6 +11,7 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "ProgressHUD.h"
 #import "MJRefresh.h"
+#import "CollectView.h"
 @interface BookDetailViewController ()<AVAudioPlayerDelegate>{
     NSInteger _count;
 }
@@ -34,6 +35,8 @@
     self.title = self.booName;
 //    self.navigationItem.hidesBackButton = YES;
     [self loadData];
+    CollectView *collectView = [[CollectView alloc] initWithFrame:CGRectMake(0, kHeight - 40, kWidth, 40)];
+    [self.view addSubview:collectView];
     
 }
 - (void)loadData{
@@ -86,13 +89,16 @@
 - (UIWebView *)webView{
     if (_webView == nil) {
         
-        self.webView = [[UIWebView alloc] initWithFrame:CGRectMake(10, 100, kWidth - 20, kHeight - 120)];
-        self.webView.backgroundColor = [UIColor redColor];
+        self.webView = [[UIWebView alloc] initWithFrame:CGRectMake(10,50, kWidth - 20, kHeight - 50 - 50 )];
+        self.webView.backgroundColor = [UIColor whiteColor];
         self.webView.scrollView.contentInset = UIEdgeInsetsMake(200, 0, 0, 0);
         self.webView.scrollView.backgroundColor = [UIColor whiteColor];
         
         [self.webView.scrollView addSubview:self.bookImageView];
         
+        self.webView.opaque = NO;
+        
+   
         NSString *urlstr = self.digestsDic[@"content"];
         [self.webView loadHTMLString:urlstr baseURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath] ]];
         

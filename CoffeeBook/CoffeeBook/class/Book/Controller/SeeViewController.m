@@ -10,6 +10,7 @@
 #import <AFNetworking/AFHTTPSessionManager.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "ProgressHUD.h"
+#import "CollectView.h"
 @interface SeeViewController ()<UIWebViewDelegate>
 {
     int _count;
@@ -45,7 +46,8 @@
     //手势返回上一页
     [self swipebackAction];
    
-    
+    CollectView *collectView = [[CollectView alloc] initWithFrame:CGRectMake(0, kHeight - 40, kWidth, 40)];
+    [self.view addSubview:collectView];
      
     
 }
@@ -187,7 +189,7 @@
 - (UIWebView *)webView{
     if (_webView == nil) {
             NSString *htmlstr = self.dic[@"content"];
-        self.webView = [[UIWebView alloc] initWithFrame:CGRectMake(20, 300 , kWidth - 40, kHeight - 300 )];
+        self.webView = [[UIWebView alloc] initWithFrame:CGRectMake(20, 300 , kWidth - 40, kHeight - 300 - 50 )];
         self.webView.delegate = self;
         
         [self.webView loadHTMLString:htmlstr baseURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath] ]];

@@ -83,6 +83,7 @@
 		7AD5908A1C89AB91008460B8 /* ReadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD590891C89AB91008460B8 /* ReadViewController.m */; };
 		7AD5908D1C89AD53008460B8 /* LesionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD5908C1C89AD53008460B8 /* LesionViewController.m */; };
 		7AD590901C89AD5D008460B8 /* SeeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD5908F1C89AD5D008460B8 /* SeeViewController.m */; };
+		7AD5C8991C9172C4009AF2B3 /* CollectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD5C8981C9172C4009AF2B3 /* CollectView.m */; };
 		7AE127301C8A760A00B330FB /* see.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AE1272F1C8A760A00B330FB /* see.plist */; };
 		7AE127321C8A800D00B330FB /* Touch_The_Sky.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 7AE127311C8A800D00B330FB /* Touch_The_Sky.mp4 */; };
 		7AE127341C8A83BE00B330FB /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AE127331C8A83BE00B330FB /* MediaPlayer.framework */; };
@@ -221,6 +222,8 @@
 		7AD5908C1C89AD53008460B8 /* LesionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LesionViewController.m; sourceTree = "<group>"; };
 		7AD5908E1C89AD5D008460B8 /* SeeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeeViewController.h; sourceTree = "<group>"; };
 		7AD5908F1C89AD5D008460B8 /* SeeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeeViewController.m; sourceTree = "<group>"; };
+		7AD5C8971C9172C4009AF2B3 /* CollectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectView.h; sourceTree = "<group>"; };
+		7AD5C8981C9172C4009AF2B3 /* CollectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectView.m; sourceTree = "<group>"; };
 		7AE1272F1C8A760A00B330FB /* see.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = see.plist; sourceTree = "<group>"; };
 		7AE127311C8A800D00B330FB /* Touch_The_Sky.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = Touch_The_Sky.mp4; path = ../../../../Downloads/Touch_The_Sky.mp4; sourceTree = "<group>"; };
 		7AE127331C8A83BE00B330FB /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
@@ -244,18 +247,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A0A42711C905CDE0092A17B /* CoreLocation.framework in Frameworks */,
+				7A0A427D1C905D2C0092A17B /* SystemConfiguration.framework in Frameworks */,
 				7AE127341C8A83BE00B330FB /* MediaPlayer.framework in Frameworks */,
 				7A0A42851C905D5A0092A17B /* AVFoundation.framework in Frameworks */,
 				7A0A42831C905D500092A17B /* libsqlite3.tbd in Frameworks */,
 				7A0A42811C905D460092A17B /* libicucore.tbd in Frameworks */,
 				7A0A427F1C905D390092A17B /* libz.1.2.5.tbd in Frameworks */,
-				7A0A427D1C905D2C0092A17B /* SystemConfiguration.framework in Frameworks */,
 				7A0A427B1C905D210092A17B /* CoreTelephony.framework in Frameworks */,
 				7A0A42791C905D0A0092A17B /* CFNetwork.framework in Frameworks */,
 				7A0A42771C905D020092A17B /* MobileCoreServices.framework in Frameworks */,
 				7A0A42751C905CF50092A17B /* CoreGraphics.framework in Frameworks */,
 				7A0A42731C905CE80092A17B /* Security.framework in Frameworks */,
-				7A0A42711C905CDE0092A17B /* CoreLocation.framework in Frameworks */,
 				7A0A426F1C905C590092A17B /* BmobSDK.framework in Frameworks */,
 				3920BA324FEC5856AAA8B4F2 /* libPods.a in Frameworks */,
 			);
@@ -476,6 +479,39 @@
 			path = ProgressHUD;
 			sourceTree = "<group>";
 		};
+		7AD5C8931C916905009AF2B3 /* collect */ = {
+			isa = PBXGroup;
+			children = (
+				7AD5C8941C917293009AF2B3 /* Controller */,
+				7AD5C8951C917293009AF2B3 /* Model */,
+				7AD5C8961C917293009AF2B3 /* View */,
+			);
+			path = collect;
+			sourceTree = "<group>";
+		};
+		7AD5C8941C917293009AF2B3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7AD5C8951C917293009AF2B3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7AD5C8961C917293009AF2B3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7AD5C8971C9172C4009AF2B3 /* CollectView.h */,
+				7AD5C8981C9172C4009AF2B3 /* CollectView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		7AF227501C8840D3008C2F23 /* common */ = {
 			isa = PBXGroup;
 			children = (
@@ -503,6 +539,7 @@
 		7AF227521C884160008C2F23 /* class */ = {
 			isa = PBXGroup;
 			children = (
+				7AD5C8931C916905009AF2B3 /* collect */,
 				7A0A425F1C9058050092A17B /* login */,
 				7AF227531C884160008C2F23 /* Book */,
 				7AF2275B1C884160008C2F23 /* Discover */,
@@ -841,6 +878,7 @@
 				7AD5908A1C89AB91008460B8 /* ReadViewController.m in Sources */,
 				7A6DFCD61C8FF7BA00651712 /* Reachability.m in Sources */,
 				7A007FCE1C8D1C81004E483D /* UIScrollView+MJRefresh.m in Sources */,
+				7AD5C8991C9172C4009AF2B3 /* CollectView.m in Sources */,
 				7AD5908D1C89AD53008460B8 /* LesionViewController.m in Sources */,
 				7A9F25101C882B140061C8FD /* AppDelegate.m in Sources */,
 				7AD5907A1C891A04008460B8 /* ProgressHUD.m in Sources */,

@@ -7,8 +7,9 @@
 //
 
 #import "LoginViewController.h"
-
-@interface LoginViewController ()
+#import <BmobSDK/BmobUser.h>
+#import "ProgressHUD.h"
+@interface LoginViewController ()<UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *userNameText;
 @property (weak, nonatomic) IBOutlet UITextField *passWordText;
@@ -22,10 +23,29 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self showBackButton];
-}
-- (IBAction)loginAction:(id)sender {
+    self.passWordText.secureTextEntry = YES;
+    
+    
 }
 
+- (IBAction)loginAction:(id)sender {
+    [BmobUser loginWithUsernameInBackground:self.userNameText.text password:self.passWordText.text block:^(BmobUser *user, NSError *error) {
+        if (user) {
+            [ProgressHUD showSuccess:@"登陆成功"];
+
+           
+        }
+    }];
+    [ProgressHUD showSuccess:@"登录失败"];
+}
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return YES;
+}
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self.view endEditing:YES];
+    
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -33,7 +53,7 @@
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
     self.tabBarController.tabBar.hidden = YES;
-    
+    [ProgressHUD dismiss];
 }
 /*
 #pragma mark - Navigation
