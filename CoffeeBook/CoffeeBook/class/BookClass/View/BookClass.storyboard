@@ -21,7 +21,7 @@
                     <navigationItem key="navigationItem" id="DuE-dK-bvf">
                         <nil key="title"/>
                         <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Fz4-Dq-o5X">
-                            <rect key="frame" x="166" y="2" width="44" height="40"/>
+                            <rect key="frame" x="8" y="2" width="315" height="40"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="1"/>
                             <state key="normal" title="Button" image="bookclub40"/>

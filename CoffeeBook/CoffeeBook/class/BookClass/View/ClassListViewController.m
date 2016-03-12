@@ -47,13 +47,15 @@
     }];
    
     self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        [self.tableView.mj_footer endRefreshing];
+
         _pagenum += 1;
         _refresh = NO;
         [self loadData];
-        [self.tableView reloadData];
-        
+      [self.tableView reloadData];
         [self.tableView.mj_footer endRefreshing];
-    }];
+
+            }];
     
     [self swipebackAction];
     
@@ -63,7 +65,7 @@
     AFHTTPSessionManager *sessionManager = [AFHTTPSessionManager manager];
     sessionManager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
     [ProgressHUD show:@"正在加载..."];
-    [sessionManager GET:[NSString stringWithFormat:@"%@&pagenum=%ld&ccn=%@", classListJieko, _pagenum, self.ccn] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+    [sessionManager GET:[NSString stringWithFormat:@"%@&pagenum=%ld&ccn=%@", classListJieko, (long)_pagenum, self.ccn] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
        

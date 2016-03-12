@@ -52,7 +52,10 @@
         if ([message isEqualToString:@"ok"]) {
             NSDictionary *resultDic = dic[@"result"];
             self.detailedDic = resultDic[@"detailed"];
-            NSArray *array = resultDic[@"digests"];
+            NSLog(@"%@", self.detailedDic);
+            NSArray *array = [NSArray new];
+            array = resultDic[@"digests"];
+            NSLog(@"%@", resultDic[@"digests"]);
             if (array.count > 0) {
                 self.digestsDic = array[0];
             }
@@ -103,14 +106,16 @@
         [self.webView loadHTMLString:urlstr baseURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath] ]];
         
         self.webView.scrollView.bounces = NO;
-        //判断是否有音频
-        NSString *vistring = self.detailedDic[@"bookvideo"];
-        if (!(vistring)) {
-            [self.audioPlayer prepareToPlay];
-            [self.webView.scrollView addSubview:self.button];
-            
-        }
-        NSLog(@"bookvideo = %@", self.detailedDic[@"bookvideo"]);
+//        //判断是否有音频
+//        NSString *vistring = self.detailedDic[@"bookvideo"];
+//        NSLog(@"%@", vistring);
+//        if (![vistring isEqualToString:@""] || ![vistring isEqualToString:@" "] || ![vistring isEqualToString:@"null"]) {
+////            [vistring isKindOfClass:[NSNull class]];
+//            [self.audioPlayer prepareToPlay];
+//            [self.webView.scrollView addSubview:self.button];
+//            
+//        }
+//        NSLog(@"bookvideo = %@", self.detailedDic[@"bookvideo"]);
     }
     return _webView;
 }
@@ -129,9 +134,13 @@
 - (AVAudioPlayer *)audioPlayer{
     if (_audioPlayer == nil) {
         //获取音频
-        NSMutableArray *array = [NSMutableArray new];
-        [array addObject: self.detailedDic[@"bookvideo"]];
-        NSString *urlStr = array[0];
+        NSArray *array = [NSArray new];
+        array =  self.detailedDic[@"bookvideo"];
+       
+           NSString *urlStr = array[0];
+
+        NSLog(@"%@", urlStr);
+        
         NSURL *url = [[NSURL alloc] initWithString:urlStr];
         NSData *audioData = [NSData dataWithContentsOfURL:url];
         NSString *docDirPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)objectAtIndex:0];

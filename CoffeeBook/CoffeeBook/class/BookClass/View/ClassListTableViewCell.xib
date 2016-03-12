@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -14,28 +15,45 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="129"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F1K-ak-2Gv">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="F1K-ak-2Gv">
                         <rect key="frame" x="18" y="10" width="80" height="110"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="110" id="KY5-Tf-kJM"/>
+                            <constraint firstAttribute="width" constant="80" id="dS9-vY-OsB"/>
+                        </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="解忧杂货店" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zfi-Zr-2DC">
-                        <rect key="frame" x="124" y="8" width="210" height="33"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="解忧杂货店" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zfi-Zr-2DC">
+                        <rect key="frame" x="124" y="8" width="210" height="21"/>
                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="《大转型时代:全球帝国的阵痛1900-1950》讲述了：20世纪上半叶的美国，就是一幅大变革和大转型的图画，就是一个国家走向全球权力顶峰的历史。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4c7-NM-d2l">
-                        <rect key="frame" x="124" y="75" width="243" height="39"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="《大转型时代:全球帝国的阵痛1900-1950》讲述了：20世纪上半叶的美国，就是一幅大变革和大转型的图画，就是一个国家走向全球权力顶峰的历史。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4c7-NM-d2l">
+                        <rect key="frame" x="124" y="52" width="243" height="32"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="（日）东野圭吾" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wdj-m8-Zeg">
-                        <rect key="frame" x="124" y="40" width="219" height="27"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="（日）东野圭吾" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wdj-m8-Zeg">
+                        <rect key="frame" x="124" y="28" width="219" height="16"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <constraints>
+                    <constraint firstAttribute="topMargin" secondItem="zfi-Zr-2DC" secondAttribute="top" id="3SO-cN-qdC"/>
+                    <constraint firstItem="F1K-ak-2Gv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="4Jj-5K-CN3"/>
+                    <constraint firstItem="Wdj-m8-Zeg" firstAttribute="leading" secondItem="F1K-ak-2Gv" secondAttribute="trailing" constant="26" id="HiD-MZ-5zg"/>
+                    <constraint firstItem="4c7-NM-d2l" firstAttribute="top" secondItem="Wdj-m8-Zeg" secondAttribute="bottom" constant="8" id="J2n-Es-zbK"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="zfi-Zr-2DC" secondAttribute="trailing" constant="33" id="UG8-8A-29L"/>
+                    <constraint firstItem="4c7-NM-d2l" firstAttribute="leading" secondItem="F1K-ak-2Gv" secondAttribute="trailing" constant="26" id="VMo-EQ-bvi"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Wdj-m8-Zeg" secondAttribute="trailing" constant="24" id="WDf-1M-TOy"/>
+                    <constraint firstItem="zfi-Zr-2DC" firstAttribute="leading" secondItem="F1K-ak-2Gv" secondAttribute="trailing" constant="26" id="gsO-zF-Xmg"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="4c7-NM-d2l" secondAttribute="trailing" id="shZ-TW-RhF"/>
+                    <constraint firstItem="F1K-ak-2Gv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="2" id="uXO-h3-h9I"/>
+                    <constraint firstItem="Wdj-m8-Zeg" firstAttribute="top" secondItem="zfi-Zr-2DC" secondAttribute="bottom" constant="-1" id="zwI-a1-68a"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="authorLable" destination="Wdj-m8-Zeg" id="W62-ge-PEO"/>

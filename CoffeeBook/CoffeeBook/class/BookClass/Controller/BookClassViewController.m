@@ -36,13 +36,7 @@
         // 结束刷新
         [self.collection.mj_header endRefreshing];
     }];
-    self.collection.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
-        [self.collection reloadData];
-        
-        // 结束刷新
-        [self.collection.mj_header endRefreshing];
-    }];
-    [self swipebackAction];
+        [self swipebackAction];
 }
 
 

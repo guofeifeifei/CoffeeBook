@@ -57,6 +57,7 @@
 		7A6DFCD61C8FF7BA00651712 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6DFCD11C8FF7BA00651712 /* Reachability.m */; };
 		7A6DFCD71C8FF7BA00651712 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 7A6DFCD21C8FF7BA00651712 /* README.md */; };
 		7A6DFCD81C8FF7BA00651712 /* ZMYNetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6DFCD41C8FF7BA00651712 /* ZMYNetManager.m */; };
+		7A7244861C9303B800CD8DD5 /* CollerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A7244851C9303B800CD8DD5 /* CollerViewController.m */; };
 		7A9F250D1C882B140061C8FD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9F250C1C882B140061C8FD /* main.m */; };
 		7A9F25101C882B140061C8FD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9F250F1C882B140061C8FD /* AppDelegate.m */; };
 		7A9F25121C882B140061C8FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A9F25111C882B140061C8FD /* Assets.xcassets */; };
@@ -179,6 +180,8 @@
 		7A6DFCD21C8FF7BA00651712 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		7A6DFCD31C8FF7BA00651712 /* ZMYNetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMYNetManager.h; sourceTree = "<group>"; };
 		7A6DFCD41C8FF7BA00651712 /* ZMYNetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMYNetManager.m; sourceTree = "<group>"; };
+		7A7244841C9303B800CD8DD5 /* CollerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollerViewController.h; sourceTree = "<group>"; };
+		7A7244851C9303B800CD8DD5 /* CollerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollerViewController.m; sourceTree = "<group>"; };
 		7A9F25081C882B140061C8FD /* CoffeeBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoffeeBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A9F250C1C882B140061C8FD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7A9F250E1C882B140061C8FD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -492,6 +495,8 @@
 		7AD5C8941C917293009AF2B3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				7A7244841C9303B800CD8DD5 /* CollerViewController.h */,
+				7A7244851C9303B800CD8DD5 /* CollerViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -891,6 +896,7 @@
 				7A007FD61C8D264A004E483D /* ClassListTableViewCell.m in Sources */,
 				7AD5907E1C892028008460B8 /* BookTableViewCell.m in Sources */,
 				7A6DFCD71C8FF7BA00651712 /* README.md in Sources */,
+				7A7244861C9303B800CD8DD5 /* CollerViewController.m in Sources */,
 				7AD590901C89AD5D008460B8 /* SeeViewController.m in Sources */,
 				7AC031C21C8EB0770073CFB8 /* DisModel.m in Sources */,
 				7A007FBE1C8D1C81004E483D /* MJRefreshBackFooter.m in Sources */,

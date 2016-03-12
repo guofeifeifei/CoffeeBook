@@ -13,6 +13,9 @@
 @interface SetViewController ()<MFMailComposeViewControllerDelegate, UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *cleanMemoryLable;
 
+@property (weak, nonatomic) IBOutlet UIButton *loginBtn;
+@property (weak, nonatomic) IBOutlet UIButton *loginImageView;
+
 @end
 
 @implementation SetViewController
@@ -21,6 +24,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self showBackButton];
+    self.loginImageView.frame=CGRectMake(kWidth / 2 - kHeight/4 /2, kHeight/4, kWidth /4, kWidth/4);
+    self.loginBtn.frame = CGRectMake(kWidth / 2 - kHeight/4 /2, kHeight/4, kWidth /4, kWidth/8);
+    
+    [self.view addSubview:self.loginBtn];
+    [self.view addSubview:self.loginImageView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -39,6 +47,8 @@
 }
 
 - (IBAction)collection:(id)sender {
+    [self showBackButton];
+    self.tabBarController.tabBar.hidden = YES;
     
 }
 - (IBAction)clearnMemoryBtn:(id)sender {
@@ -128,7 +138,7 @@
     SDImageCache *cache = [SDImageCache sharedImageCache];
     NSInteger cachesize = [cache getSize];
     NSLog(@"缓存%@",NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES));
-    NSString *cacheStr = [NSString stringWithFormat:@"清除缓存(%.02f)M", (float)cachesize / 1024 / 1024];
+    NSString *cacheStr = [NSString stringWithFormat:@"缓存(%.02f)M", (float)cachesize / 1024 / 1024];
     self.cleanMemoryLable.text = cacheStr;
 }
 /*

@@ -104,6 +104,14 @@
 }
 - (BOOL)checkout{
 
+    if (self.phoneNumber) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"亲情提示" message:@"用户名已存在" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+        [alert show];
+        
+
+    }
+    
+    
     //两次密码不一致
     if (![self.passworkText.text isEqualToString:self.confirmPassword.text]) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"亲情提示" message:@"密码输入不一致" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
