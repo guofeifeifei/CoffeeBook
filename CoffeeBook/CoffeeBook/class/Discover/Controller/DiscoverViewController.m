@@ -12,6 +12,8 @@
 #import "BookDetailViewController.h"
 #import "ProgressHUD.h"
 #import "MJRefresh.h"
+
+#import "ZMYNetManager.h"
 #import "UserViewController.h"
 #import <AFNetworking/AFHTTPSessionManager.h>
 @interface DiscoverViewController ()<UITableViewDataSource, UITableViewDelegate>{
@@ -62,10 +64,26 @@
     
 }
 - (void)loadData{
+    if (![ZMYNetManager shareZMYNetManager].isZMYNetWorkRunning) {
+        
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"温馨提示" message:@"您的网络有问题，请检查网络" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *action = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+           
+        }];
+        UIAlertAction *quxiao = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+         
+        }];
+        //
+        [alert addAction:action];
+        [alert addAction:quxiao];
+        [self presentViewController:alert animated:YES completion:nil];
+        
+        
+    }else{
     AFHTTPSessionManager *sessionManager = [AFHTTPSessionManager manager];
     sessionManager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
     [ProgressHUD show:@"正在加载..."];
-    [sessionManager GET:[NSString stringWithFormat:@"%@&pagenum=%ld", discoverJieKo,_pageNum] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+    [sessionManager GET:[NSString stringWithFormat:@"%@&pagenum=%ld", discoverJieKo,(long)_pageNum] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"%@", responseObject);
@@ -102,7 +120,7 @@
     }];
  
     
-    
+    }
     
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -153,7 +171,7 @@
         self.tableView = [[UITableView alloc] initWithFrame:self.view.frame];
         self.tableView.delegate = self;
         self.tableView.dataSource = self;
-       // self.tableView.separatorColor = [UIColor whiteColor];
+        self.tableView.separatorColor = [UIColor whiteColor];
       // self.tableView.rowHeight = 216;
         
     }

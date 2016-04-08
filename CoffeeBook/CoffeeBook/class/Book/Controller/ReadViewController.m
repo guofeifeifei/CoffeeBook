@@ -9,9 +9,13 @@
 #import "ReadViewController.h"
 #import "ProgressHUD.h"
 #import "CollectView.h"
+#import "ZMYNetManager.h"
+
 #import <AFNetworking/AFHTTPSessionManager.h>
-@interface ReadViewController ()
+@interface ReadViewController ()<UIWebViewDelegate>
 @property(nonatomic, strong) NSDictionary *dic;
+@property(nonatomic, strong) UIActivityIndicatorView *activity;
+@property(nonatomic, strong) UIWebView *webView;
 @end
 
 @implementation ReadViewController
@@ -26,8 +30,25 @@
     [self loadData];
     CollectView *collectView = [[CollectView alloc] initWithFrame:CGRectMake(0, kHeight - 40, kWidth, 40)];
     [self.view addSubview:collectView];
+    [self.view addSubview:self.activity];
 }
 - (void)loadData{
+    if (![ZMYNetManager shareZMYNetManager].isZMYNetWorkRunning) {
+        
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"温馨提示" message:@"您的网络有问题，请检查网络" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *action = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+          
+        }];
+        UIAlertAction *quxiao = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+           
+        }];
+        //
+        [alert addAction:action];
+        [alert addAction:quxiao];
+        [self presentViewController:alert animated:YES completion:nil];
+        
+        
+    }else{
     AFHTTPSessionManager *sessionManager = [AFHTTPSessionManager manager];
     sessionManager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
     NSString *idstr = [NSString stringWithFormat:@"%@", self.readId];
@@ -40,13 +61,15 @@
         NSLog(@"%@", responseObject);
         self.dic = responseObject;
         [self loadTextView];
+        
         [ProgressHUD showSuccess:@"加载完成"];
+       
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"%@", error);
         [ProgressHUD showError:@"网络有误"];
     }];
     
-    
+    }
     
 }
 - (void)loadTextView{
@@ -55,19 +78,52 @@
     titleLable.textColor = kbookColor;
     [self.view addSubview:titleLable];
     
-    NSString *htmlStr = self.dic[@"content"];
-    UIWebView *webView = [[UIWebView alloc] initWithFrame:CGRectMake(20, 70, kWidth - 40, kHeight - 100 - 44 )];
-    [webView loadHTMLString:htmlStr baseURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]]];
-    //到顶部不可以滑动
-    webView.scrollView.bounces = NO;
-    //文字适应屏幕
-   // webView.scalesPageToFit = YES;
-    [self.view addSubview:webView];
+ 
+    [self.view addSubview:self.webView];
+    
     
     
     
 }
+- (UIWebView *)webView{
+    if (_webView == nil) {
+        NSString *htmlStr = self.dic[@"content"];
+       self.webView = [[UIWebView alloc] initWithFrame:CGRectMake(20, 70, kWidth - 40, kHeight - 100 - 44 )];
+        [self.webView loadHTMLString:htmlStr baseURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]]];
+        self.webView.delegate = self;
+        //到顶部不可以滑动
+        self.webView.scrollView.bounces = NO;
+        //文字适应屏幕
+        // webView.scalesPageToFit = YES;
+    }
+    return _webView;
+    
+}
+- (UIActivityIndicatorView *)activity{
+    if (_activity == nil) {
+        self.activity = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+        self.activity.backgroundColor = kbookColor;
+        //显示位置
+        self.activity.center = self.view.center;
+        //
+        // [self.activity startAnimating];
+        
+       
+        
+    }
+    return _activity;
+    
+}
 
+
+- (void)webViewDidStartLoad:(UIWebView *)webView{
+    [self.activity startAnimating];
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView{
+    [self.activity stopAnimating];
+    
+}
 - (NSDictionary *)dic{
     if (_dic == nil) {
         self.dic = [NSDictionary new];

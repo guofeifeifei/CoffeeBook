@@ -1,0 +1,20 @@
+{
+message = ok;
+result =     {
+age = "2015-12-05";
+channel = weixin;
+districtid = " ";
+face = "http://wx.qlogo.cn/mmopen/xTkpF8ISZkAic8l2mRZBTHu3rich2TRs49l6M4VRTUwribGuKkIVOUQwpFBxtHdhIHOOsSFqZDM12vUBCR4YnT0xy0RVZzGgvol/0";
+gender = 2;
+nickname = "\U5c0f\U821f";
+phone = "<null>";
+    profile = "<null>";
+        signature = "\U5c0f\U821f\U4ece\U6b64\U901d\Uff0c\U6c5f\U6d77\U5bc4\U4f59\U751f\U3002";
+        umuid = otItHxGqWzYa1LleEzl9Qk7wMsoY;
+        unionid = otItHxGqWzYa1LleEzl9Qk7wMsoY;
+        userbd = "wwdx_bg_.png";
+        userid = 10763;
+        userlike = "<null>";
+            };
+            status = 0;
+            }

@@ -136,6 +136,22 @@
     
 }
 - (void)loadData{
+    if (![ZMYNetManager shareZMYNetManager].isZMYNetWorkRunning) {
+        
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"温馨提示" message:@"您的网络有问题，请检查网络" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *action = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            
+        }];
+        UIAlertAction *quxiao = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+           
+        }];
+        //
+        [alert addAction:action];
+        [alert addAction:quxiao];
+        [self presentViewController:alert animated:YES completion:nil];
+        
+        
+    }else{
     AFNetworkReachabilityManager *netManager = [AFNetworkReachabilityManager sharedManager];
     [netManager startMonitoring];
     [netManager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
@@ -187,7 +203,7 @@
         NSLog(@"%@",error);
 
     }];
-
+    }
 }
 #pragma mark ------- LazyLoading
 - (UITableView *)tableView{

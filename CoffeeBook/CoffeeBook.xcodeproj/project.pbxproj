@@ -50,20 +50,22 @@
 		7A0A42851C905D5A0092A17B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A0A42841C905D5A0092A17B /* AVFoundation.framework */; };
 		7A0A42881C9060D80092A17B /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A0A42871C9060D80092A17B /* LoginViewController.m */; };
 		7A53696F1C8D71C0006C0516 /* BookDetailView.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A53696E1C8D71C0006C0516 /* BookDetailView.plist */; };
+		7A55ABA11CA697490082DC97 /* huoji.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7A55ABA01CA697490082DC97 /* huoji.jpg */; };
 		7A6DFCC61C8FBA3900651712 /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6DFCC41C8FBA3900651712 /* UserViewController.m */; };
-		7A6DFCCB1C8FC3A300651712 /* UserStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A6DFCCA1C8FC3A300651712 /* UserStoryBoard.storyboard */; };
 		7A6DFCCD1C8FD6C100651712 /* user.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A6DFCCC1C8FD6C100651712 /* user.plist */; };
 		7A6DFCD51C8FF7BA00651712 /* LICENCE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7A6DFCCF1C8FF7BA00651712 /* LICENCE.txt */; };
 		7A6DFCD61C8FF7BA00651712 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6DFCD11C8FF7BA00651712 /* Reachability.m */; };
 		7A6DFCD71C8FF7BA00651712 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 7A6DFCD21C8FF7BA00651712 /* README.md */; };
 		7A6DFCD81C8FF7BA00651712 /* ZMYNetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6DFCD41C8FF7BA00651712 /* ZMYNetManager.m */; };
 		7A7244861C9303B800CD8DD5 /* CollerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A7244851C9303B800CD8DD5 /* CollerViewController.m */; };
+		7A8349721CAB4E7000B24121 /* headimage1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7A8349711CAB4E7000B24121 /* headimage1.jpg */; };
 		7A9F250D1C882B140061C8FD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9F250C1C882B140061C8FD /* main.m */; };
 		7A9F25101C882B140061C8FD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9F250F1C882B140061C8FD /* AppDelegate.m */; };
 		7A9F25121C882B140061C8FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A9F25111C882B140061C8FD /* Assets.xcassets */; };
 		7A9F25151C882B140061C8FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A9F25131C882B140061C8FD /* LaunchScreen.storyboard */; };
 		7AC031B91C8E7CB40073CFB8 /* discover.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AC031B81C8E7CB40073CFB8 /* discover.plist */; };
 		7AC031C21C8EB0770073CFB8 /* DisModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AC031C11C8EB0770073CFB8 /* DisModel.m */; };
+		7AC7E3BB1C9A3E0500B31826 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AC7E3BA1C9A3E0500B31826 /* AboutViewController.m */; };
 		7AC93F1D1C8C0825003BCEF8 /* UIViewController+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AC93F1C1C8C0825003BCEF8 /* UIViewController+Common.m */; };
 		7AC93F2E1C8C33A0003BCEF8 /* DisListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AC93F2C1C8C33A0003BCEF8 /* DisListTableViewCell.m */; };
 		7AC93F2F1C8C33A0003BCEF8 /* DisListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AC93F2D1C8C33A0003BCEF8 /* DisListTableViewCell.xib */; };
@@ -170,9 +172,9 @@
 		7A0A42861C9060D80092A17B /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		7A0A42871C9060D80092A17B /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		7A53696E1C8D71C0006C0516 /* BookDetailView.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BookDetailView.plist; sourceTree = "<group>"; };
+		7A55ABA01CA697490082DC97 /* huoji.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = huoji.jpg; sourceTree = "<group>"; };
 		7A6DFCC31C8FBA3900651712 /* UserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserViewController.h; sourceTree = "<group>"; };
 		7A6DFCC41C8FBA3900651712 /* UserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserViewController.m; sourceTree = "<group>"; };
-		7A6DFCCA1C8FC3A300651712 /* UserStoryBoard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserStoryBoard.storyboard; sourceTree = "<group>"; };
 		7A6DFCCC1C8FD6C100651712 /* user.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = user.plist; sourceTree = "<group>"; };
 		7A6DFCCF1C8FF7BA00651712 /* LICENCE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENCE.txt; sourceTree = "<group>"; };
 		7A6DFCD01C8FF7BA00651712 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 		7A6DFCD41C8FF7BA00651712 /* ZMYNetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMYNetManager.m; sourceTree = "<group>"; };
 		7A7244841C9303B800CD8DD5 /* CollerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollerViewController.h; sourceTree = "<group>"; };
 		7A7244851C9303B800CD8DD5 /* CollerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollerViewController.m; sourceTree = "<group>"; };
+		7A8349711CAB4E7000B24121 /* headimage1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = headimage1.jpg; sourceTree = "<group>"; };
 		7A9F25081C882B140061C8FD /* CoffeeBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoffeeBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A9F250C1C882B140061C8FD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7A9F250E1C882B140061C8FD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -192,6 +195,8 @@
 		7AC031B81C8E7CB40073CFB8 /* discover.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = discover.plist; sourceTree = "<group>"; };
 		7AC031C01C8EB0770073CFB8 /* DisModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisModel.h; sourceTree = "<group>"; };
 		7AC031C11C8EB0770073CFB8 /* DisModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisModel.m; sourceTree = "<group>"; };
+		7AC7E3B91C9A3E0500B31826 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		7AC7E3BA1C9A3E0500B31826 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		7AC93F1B1C8C0825003BCEF8 /* UIViewController+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Common.h"; sourceTree = "<group>"; };
 		7AC93F1C1C8C0825003BCEF8 /* UIViewController+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Common.m"; sourceTree = "<group>"; };
 		7AC93F2B1C8C33A0003BCEF8 /* DisListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisListTableViewCell.h; sourceTree = "<group>"; };
@@ -384,6 +389,8 @@
 				7A0A426A1C90585A0092A17B /* FindViewController.m */,
 				7A0A42861C9060D80092A17B /* LoginViewController.h */,
 				7A0A42871C9060D80092A17B /* LoginViewController.m */,
+				7AC7E3B91C9A3E0500B31826 /* AboutViewController.h */,
+				7AC7E3BA1C9A3E0500B31826 /* AboutViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -406,6 +413,7 @@
 		7A6DFCCE1C8FF7BA00651712 /* Reachability */ = {
 			isa = PBXGroup;
 			children = (
+				7A55ABA01CA697490082DC97 /* huoji.jpg */,
 				7A6DFCCF1C8FF7BA00651712 /* LICENCE.txt */,
 				7A6DFCD01C8FF7BA00651712 /* Reachability.h */,
 				7A6DFCD11C8FF7BA00651712 /* Reachability.m */,
@@ -522,6 +530,7 @@
 			children = (
 				7A6DFCCE1C8FF7BA00651712 /* Reachability */,
 				7AE127311C8A800D00B330FB /* Touch_The_Sky.mp4 */,
+				7A8349711CAB4E7000B24121 /* headimage1.jpg */,
 				7AD590801C892CB4008460B8 /* JieKo.h */,
 				7AF227621C88438E008C2F23 /* PrefixHeader.pch */,
 				7AC93F1B1C8C0825003BCEF8 /* UIViewController+Common.h */,
@@ -691,7 +700,6 @@
 				7AC93F2B1C8C33A0003BCEF8 /* DisListTableViewCell.h */,
 				7AC93F2C1C8C33A0003BCEF8 /* DisListTableViewCell.m */,
 				7AC93F2D1C8C33A0003BCEF8 /* DisListTableViewCell.xib */,
-				7A6DFCCA1C8FC3A300651712 /* UserStoryBoard.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -759,7 +767,7 @@
 				TargetAttributes = {
 					7A9F25071C882B140061C8FD = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 8Z44W37ZT6;
+						DevelopmentTeam = CCQ5LLLX4L;
 					};
 				};
 			};
@@ -788,9 +796,9 @@
 			files = (
 				7AC031B91C8E7CB40073CFB8 /* discover.plist in Resources */,
 				7A007FD71C8D264A004E483D /* ClassListTableViewCell.xib in Resources */,
-				7A6DFCCB1C8FC3A300651712 /* UserStoryBoard.storyboard in Resources */,
 				7A0A426D1C9059990092A17B /* SetStoryboard.storyboard in Resources */,
 				7AD590791C891A04008460B8 /* ProgressHUD.bundle in Resources */,
+				7A55ABA11CA697490082DC97 /* huoji.jpg in Resources */,
 				7AF2276F1C8853A6008C2F23 /* BookClass.storyboard in Resources */,
 				7A53696F1C8D71C0006C0516 /* BookDetailView.plist in Resources */,
 				7A6DFCCD1C8FD6C100651712 /* user.plist in Resources */,
@@ -807,6 +815,7 @@
 				7AF227711C8853B4008C2F23 /* Discover.storyboard in Resources */,
 				7AD590751C891A04008460B8 /* blueArrow.png in Resources */,
 				7AC93F311C8C55B0003BCEF8 /* class.plist in Resources */,
+				7A8349721CAB4E7000B24121 /* headimage1.jpg in Resources */,
 				7AE127301C8A760A00B330FB /* see.plist in Resources */,
 				7AF2276D1C885390008C2F23 /* Book.storyboard in Resources */,
 				7AE1273D1C8AC7FA00B330FB /* lesion.plist in Resources */,
@@ -878,6 +887,7 @@
 				7A007FC91C8D1C81004E483D /* MJRefreshNormalHeader.m in Sources */,
 				7AC93F2E1C8C33A0003BCEF8 /* DisListTableViewCell.m in Sources */,
 				7A0A42881C9060D80092A17B /* LoginViewController.m in Sources */,
+				7AC7E3BB1C9A3E0500B31826 /* AboutViewController.m in Sources */,
 				7A0A426B1C90585A0092A17B /* FindViewController.m in Sources */,
 				7AD590781C891A04008460B8 /* ShareViewController.m in Sources */,
 				7AD5908A1C89AB91008460B8 /* ReadViewController.m in Sources */,
@@ -953,7 +963,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Beijing Lamco Sinyo education technology co., LTD (CCQ5LLLX4L)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Beijing Lamco Sinyo education technology co., LTD (CCQ5LLLX4L)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -975,6 +986,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -996,7 +1008,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Beijing Lamco Sinyo education technology co., LTD (CCQ5LLLX4L)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Beijing Lamco Sinyo education technology co., LTD (CCQ5LLLX4L)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -1011,6 +1024,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1021,6 +1035,9 @@
 			baseConfigurationReference = 01542F6810975C90291E0412 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Beijing Lamco Sinyo education technology co., LTD (CCQ5LLLX4L)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Beijing Lamco Sinyo education technology co., LTD (CCQ5LLLX4L)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Libary",
@@ -1030,8 +1047,9 @@
 				INFOPLIST_FILE = CoffeeBook/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = GuoFeiFei.CoffeeBook;
+				PRODUCT_BUNDLE_IDENTIFIER = com.GuoFeiFei.CoffeeBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -1040,6 +1058,9 @@
 			baseConfigurationReference = 59DFF7739C29D37DE772F8E2 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Beijing Lamco Sinyo education technology co., LTD (CCQ5LLLX4L)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Beijing Lamco Sinyo education technology co., LTD (CCQ5LLLX4L)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Libary",
@@ -1049,8 +1070,9 @@
 				INFOPLIST_FILE = CoffeeBook/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = GuoFeiFei.CoffeeBook;
+				PRODUCT_BUNDLE_IDENTIFIER = com.GuoFeiFei.CoffeeBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

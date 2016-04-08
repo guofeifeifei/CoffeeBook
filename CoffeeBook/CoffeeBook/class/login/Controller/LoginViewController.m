@@ -24,7 +24,8 @@
     // Do any additional setup after loading the view.
     [self showBackButton];
     self.passWordText.secureTextEntry = YES;
-    
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor colorWithRed:103.0 / 255.0 green:47.0 / 255.0 blue:42.0 /255.0 alpha:1.0], NSFontAttributeName:[UIFont systemFontOfSize:18.0f]}];
+
     
 }
 
@@ -32,11 +33,15 @@
     [BmobUser loginWithUsernameInBackground:self.userNameText.text password:self.passWordText.text block:^(BmobUser *user, NSError *error) {
         if (user) {
             [ProgressHUD showSuccess:@"登陆成功"];
-
            
+            [[NSNotificationCenter defaultCenter]postNotificationName:@"changeImage" object:nil userInfo:@{@"input" : @"headimage1.jpg"}];
+ [self.navigationController popViewControllerAnimated:YES];
+           
+        }else{
+            [ProgressHUD showSuccess:@"登录失败"];
         }
     }];
-    [ProgressHUD showSuccess:@"登录失败"];
+    
 }
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
     [textField resignFirstResponder];

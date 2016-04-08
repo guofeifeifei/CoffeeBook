@@ -9,9 +9,10 @@
 #import "LesionViewController.h"
 #import "ProgressHUD.h"
 #import "CollectView.h"
+#import "ZMYNetManager.h"
 #import <AFNetworking/AFHTTPSessionManager.h>
 #import <SDWebImage/UIImageView+WebCache.h>
-@interface LesionViewController (){
+@interface LesionViewController ()<UIWebViewDelegate>{
     NSInteger _count;
 }
 @property(nonatomic, strong) NSDictionary *dic;
@@ -23,6 +24,7 @@
 @property(nonatomic, strong) UIImageView *image1;
 @property(nonatomic, strong) UIImageView *image2;
 @property(nonatomic, strong) UIWebView *webView;
+  @property(nonatomic, strong) UIActivityIndicatorView *activity;
 @end
 
 @implementation LesionViewController
@@ -41,6 +43,7 @@
     [self.view addSubview:imageVC];
     CollectView *collectView = [[CollectView alloc] initWithFrame:CGRectMake(0, kHeight - 40, kWidth, 40)];
     [self.view addSubview:collectView];
+    [self.view addSubview:self.activity];
     }
 - (void)moviewLoading{
    
@@ -78,6 +81,22 @@
     self.progressView.progress = self.avAudioPlayer.currentTime/self.avAudioPlayer.duration;
 }
 - (void)loadData{
+    if (![ZMYNetManager shareZMYNetManager].isZMYNetWorkRunning) {
+        
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"温馨提示" message:@"您的网络有问题，请检查网络" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *action = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+           
+        }];
+        UIAlertAction *quxiao = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+          
+        }];
+        //
+        [alert addAction:action];
+        [alert addAction:quxiao];
+        [self presentViewController:alert animated:YES completion:nil];
+        
+        
+    }else{
         AFHTTPSessionManager *sessionManager = [AFHTTPSessionManager manager];
         sessionManager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
         NSString *idstr = [NSString stringWithFormat:@"%@", self.lesionId];
@@ -101,7 +120,7 @@
         
         
     }
-
+}
 - (void)textLodaing{
       [self.view addSubview:self.titleLable];
     
@@ -111,12 +130,31 @@
     
    
     [self.view addSubview:self.webView ];
-    
+      
     
     
     
 }
+- (UIActivityIndicatorView *)activity{
+    if (_activity == nil) {
+        self.activity = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+        self.activity.backgroundColor = kbookColor;
+        //显示位置
+        self.activity.center = self.view.center;
 
+    }
+    return _activity;
+    
+    
+}
+- (void)webViewDidStartLoad:(UIWebView *)webView{
+    [self.activity startAnimating];
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView{
+    [self.activity stopAnimating];
+    
+}
 - (NSDictionary *)dic{
     if (_dic == nil) {
         self.dic = [NSDictionary new];
@@ -126,7 +164,7 @@
 - (UILabel *)titleLable{
     if (_titleLable == nil) {
         //一个Lable
-       self.titleLable = [[UILabel alloc] initWithFrame:CGRectMake(30, 30 ,250, 44)];
+       self.titleLable = [[UILabel alloc] initWithFrame:CGRectMake(20, 30 ,240, 44)];
         self.titleLable.textColor = kbookColor;
         self.titleLable.text = self.dic[@"title"];
         NSLog(@"%@", self.dic[@"title"]);
@@ -137,7 +175,7 @@
 - (UIImageView *)image1{
     if (_image1 == nil) {
         //一张图片
-        self.image1 = [[UIImageView alloc] initWithFrame:CGRectMake(300, 40, 40, 70)];
+        self.image1 = [[UIImageView alloc] initWithFrame:CGRectMake(kWidth - 60, 40, 40, 70)];
         [self.image1 sd_setImageWithURL:[NSURL URLWithString:self.dic[@"bookCoverUrl"]] placeholderImage:nil];
 
     }
@@ -146,7 +184,7 @@
 - (UIImageView *)image2{
     if (_image2 == nil) {
         //一张图片
-        self.image2 = [[UIImageView alloc] initWithFrame:CGRectMake(30, 30 + 44, 30, 30)];
+        self.image2 = [[UIImageView alloc] initWithFrame:CGRectMake(20, 30 + 44, 30, 30)];
         [self.image2 setImage:[UIImage imageNamed:@"60"]];
     }
     return _image2;
@@ -155,12 +193,11 @@
     if (_webView == nil) {
         NSString *htmlStr = self.dic[@"content"];
         
-        self.webView = [[UIWebView alloc] initWithFrame:CGRectMake(20, 300 , kWidth - 40, kHeight - 300)];
+        self.webView = [[UIWebView alloc] initWithFrame:CGRectMake(20, 300 , kWidth - 40, kHeight - 300 - 50 )];
         [self.webView  loadHTMLString:htmlStr baseURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]]];
         //到顶部不可以滑动
         self.webView .scrollView.bounces = NO;
-        //文字适应屏幕
-        // webView.scalesPageToFit = YES;
+        self.webView.delegate = self;
     }
     return _webView;
 }

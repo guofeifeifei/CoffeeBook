@@ -19,6 +19,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self showBackButton];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor colorWithRed:103.0 / 255.0 green:47.0 / 255.0 blue:42.0 /255.0 alpha:1.0], NSFontAttributeName:[UIFont systemFontOfSize:18.0f]}];
+
 }
 
 - (void)didReceiveMemoryWarning {

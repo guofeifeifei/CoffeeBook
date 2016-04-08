@@ -23,6 +23,10 @@
 #else
 #define NSLog(FORMAT, ...) nil
 #endif
+
+
+
+
 ///如果是debug
 #ifdef DEBUG
 #	define GFFLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);

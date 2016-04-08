@@ -23,29 +23,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self showBackButton];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor colorWithRed:103.0 / 255.0 green:47.0 / 255.0 blue:42.0 /255.0 alpha:1.0], NSFontAttributeName:[UIFont systemFontOfSize:18.0f]}];
+
 }
-//- (IBAction)sendCode:(id)sender {
-//    [BmobSMS requestSMSCodeInBackgroundWithPhoneNumber:self.phoneNumber.text andTemplate:@"test" resultBlock:^(int number, NSError *error) {
-//        if (error) {
-//            NSLog(@"%@", error);
-//        }else{
-//            NSLog(@"sms ID:%d", number);
-//            
-//            
-//        }
-//    }];
-//    
-//    
-//}
+
+
 - (IBAction)anewSet:(id)sender {
-//    [BmobUser resetPasswordInbackgroundWithSMSCode:self.codeNmber.text andNewPassword:self.confirmPassword.text block:^(BOOL isSuccessful, NSError *error) {
-//        if (isSuccessful) {
-//            [ProgressHUD showSuccess:@"密码设置成功"];
-//        }else{
-//            [ProgressHUD showError:@"密码设置错误"];
-//        }
-//    }];
-    
     BmobUser *user = [BmobUser getCurrentUser];
     if ([user objectForKey:@"emailVerified"]) {
         if (![[user objectForKey:@"emailVerified"]boolValue]) {

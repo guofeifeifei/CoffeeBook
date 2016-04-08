@@ -11,6 +11,7 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "ProgressHUD.h"
 #import "CollectView.h"
+#import "ZMYNetManager.h"
 @interface SeeViewController ()<UIWebViewDelegate>
 {
     int _count;
@@ -25,6 +26,7 @@
 @property(nonatomic, strong) UIImageView *image1;
 @property(nonatomic, strong) UIImageView *image2;
 @property(nonatomic, strong) UIWebView *webView;
+  @property(nonatomic, strong) UIActivityIndicatorView *activity;
 
 @end
 
@@ -48,6 +50,7 @@
    
     CollectView *collectView = [[CollectView alloc] initWithFrame:CGRectMake(0, kHeight - 40, kWidth, 40)];
     [self.view addSubview:collectView];
+    [self.view addSubview:self.activity];
      
     
 }
@@ -108,6 +111,22 @@
     
 }
 - (void)loadData{
+    if (![ZMYNetManager shareZMYNetManager].isZMYNetWorkRunning) {
+        
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"温馨提示" message:@"您的网络有问题，请检查网络" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *action = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            
+        }];
+        UIAlertAction *quxiao = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+           
+        }];
+        //
+        [alert addAction:action];
+        [alert addAction:quxiao];
+        [self presentViewController:alert animated:YES completion:nil];
+        
+        
+    }else{
     AFHTTPSessionManager *sessionManager = [AFHTTPSessionManager manager];
     sessionManager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
     NSString *idstr = [NSString stringWithFormat:@"%@", self.seeId];
@@ -128,7 +147,7 @@
         [ProgressHUD showError:@"网络有误"];
     }];
 
-    
+    }
 }
 
 - (void)textLodaing{
@@ -141,11 +160,9 @@
         [self.view addSubview:self.image2];
     
     
-
-    [self.view addSubview:self.webView];
+       [self.view addSubview:self.webView];
     
-    
-}
+    }
 
 
 - (void)didReceiveMemoryWarning {
@@ -161,7 +178,7 @@
 - (UILabel *)titleLable{
     if (_titleLable == nil) {
         //一个Lable
-        self.titleLable = [[UILabel alloc] initWithFrame:CGRectMake(30, 30,250, 44)];
+        self.titleLable = [[UILabel alloc] initWithFrame:CGRectMake(20, 30,240, 44)];
         self.titleLable.font = [UIFont systemFontOfSize:15.0];
         self.titleLable.textColor = kbookColor;
         self.titleLable.text = self.dic[@"title"];
@@ -172,14 +189,14 @@
 - (UIImageView *)image1{
     if (_image1 == nil) {
         //一张图片
-        self.image1 = [[UIImageView alloc] initWithFrame:CGRectMake(300, 40, 40, 70)];
+        self.image1 = [[UIImageView alloc] initWithFrame:CGRectMake(kWidth - 60, 40, 40, 70)];
         [self.image1 sd_setImageWithURL:[NSURL URLWithString:self.dic[@"bookCoverUrl"]] placeholderImage:nil];
     }
     return _image1;
 }
 - (UIImageView *)image2{
     if (_image2 == nil) {
-        self.image2 = [[UIImageView alloc] initWithFrame:CGRectMake(30, 30 + 44, 30, 30)];
+        self.image2 = [[UIImageView alloc] initWithFrame:CGRectMake(20, 30 + 44, 30, 30)];
         [self.image2 setImage:[UIImage imageNamed:@"60"]];
 
     }
@@ -200,7 +217,29 @@
     }
     return _webView;
 }
+- (UIActivityIndicatorView *)activity{
+    if (_activity == nil) {
+        self.activity = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+        self.activity.backgroundColor = kbookColor;
+        //显示位置
+        self.activity.center = self.view.center;
+        //
+        // [self.activity startAnimating];
+        
+        
+        
+    }
+    return _activity;
+    
+}
+- (void)webViewDidStartLoad:(UIWebView *)webView{
+    [self.activity startAnimating];
+}
 
+- (void)webViewDidFinishLoad:(UIWebView *)webView{
+    [self.activity stopAnimating];
+    
+}
 - (UIButton *)button{
     if (_button == nil) {
         //播放
@@ -211,6 +250,7 @@
     }
     return _button;
 }
+
 - (MPMoviePlayerController *)moviePlayer{
     if (_moviePlayer == nil) {
         NSString *url = [[NSBundle mainBundle] pathForResource:@"Touch_The_Sky" ofType:@".mp4"];

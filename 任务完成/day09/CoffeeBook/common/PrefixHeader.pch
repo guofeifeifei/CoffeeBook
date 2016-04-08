@@ -1,0 +1,36 @@
+//
+//  PrefixHeader.pch
+//  CoffeeBook
+//
+//  Created by scjy on 16/3/3.
+//  Copyright © 2016年 郭飞飞. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+#import <UIKit/UIKit.h>
+#import "UIViewController+Common.h"
+
+#import "JieKo.h"
+
+#define kWidth [UIScreen mainScreen].bounds.size.width
+#define kHeight [UIScreen mainScreen].bounds.size.height
+#define kbookColor [UIColor colorWithRed:103.0 / 255.0 green:47.0 / 255.0 blue:42.0 /255.0 alpha:1.0];
+
+//在调试的时候，会输出（格式：文件名:行号）日志。在Release正式版本的时候，会关闭日志输出。
+#ifdef DEBUG
+#define NSLog(FORMAT, ...) fprintf(stderr,"%s:%d\t%s\n",[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
+#else
+#define NSLog(FORMAT, ...) nil
+#endif
+///如果是debug
+#ifdef DEBUG
+#	define GFFLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+#else
+#	define GFFLog(...)
+#endif
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* PrefixHeader_pch */

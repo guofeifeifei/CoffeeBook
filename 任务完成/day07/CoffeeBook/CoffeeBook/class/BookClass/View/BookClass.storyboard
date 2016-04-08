@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ILf-cA-AHc">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <scenes>
+        <!--Book Class View Controller-->
+        <scene sceneID="wNp-uO-8wZ">
+            <objects>
+                <viewController id="tMv-IG-dfP" customClass="BookClassViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gSx-92-jzp"/>
+                        <viewControllerLayoutGuide type="bottom" id="FcX-d7-QAz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="s8K-ES-XGV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="DuE-dK-bvf">
+                        <nil key="title"/>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Fz4-Dq-o5X">
+                            <rect key="frame" x="166" y="2" width="44" height="40"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="1"/>
+                            <state key="normal" title="Button" image="bookclub40"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="20"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                        </button>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="wXd-wq-QCu">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="7Az-cs-guV">
+                                <rect key="frame" x="329" y="7" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="set_normal"/>
+                                <connections>
+                                    <action selector="setingViewAction:" destination="tMv-IG-dfP" eventType="touchUpInside" id="fLh-7X-3lh"/>
+                                </connections>
+                            </button>
+                            <connections>
+                                <action selector="setingViewAction:" destination="tMv-IG-dfP" id="ax3-Ke-NKm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1bG-E4-lID" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="167.5" y="67.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ZMm-Ms-tqR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ILf-cA-AHc" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="LAh-iE-Huv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="tMv-IG-dfP" kind="relationship" relationship="rootViewController" id="TYF-Lu-PTD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xnO-Do-HTh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-644.5" y="160.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bookclub40" width="40" height="40"/>
+        <image name="set_normal" width="40" height="40"/>
+    </resources>
+</document>

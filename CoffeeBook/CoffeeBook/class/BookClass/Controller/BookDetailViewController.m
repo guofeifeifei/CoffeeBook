@@ -12,7 +12,8 @@
 #import "ProgressHUD.h"
 #import "MJRefresh.h"
 #import "CollectView.h"
-@interface BookDetailViewController ()<AVAudioPlayerDelegate>{
+#import "ZMYNetManager.h"
+@interface BookDetailViewController ()<AVAudioPlayerDelegate, UIWebViewDelegate>{
     NSInteger _count;
 }
 @property(nonatomic, strong) NSDictionary *detailedDic;
@@ -21,6 +22,7 @@
 @property(nonatomic, strong) AVAudioPlayer *audioPlayer;
 @property(nonatomic, strong) UIButton *button;
 @property(nonatomic, strong) UIImageView *bookImageView;
+  @property(nonatomic, strong) UIActivityIndicatorView *activity;
 @end
 
 @implementation BookDetailViewController
@@ -37,9 +39,59 @@
     [self loadData];
     CollectView *collectView = [[CollectView alloc] initWithFrame:CGRectMake(0, kHeight - 40, kWidth, 40)];
     [self.view addSubview:collectView];
+    [self.view addSubview:self.activity];
     
 }
+
+
+
+- (void)webViewDidStartLoad:(UIWebView *)webView{
+    [self.activity startAnimating];
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView{
+    [self.activity stopAnimating];
+    
+}
+
+    
+
+- (UIActivityIndicatorView *)activity{
+    if (_activity == nil) {
+        self.activity = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+        self.activity.backgroundColor = kbookColor;
+        //显示位置
+        self.activity.center = self.view.center;
+        //
+        // [self.activity startAnimating];
+        
+        
+        
+    }
+    return _activity;
+
+    }
+    
+
 - (void)loadData{
+    if (![ZMYNetManager shareZMYNetManager].isZMYNetWorkRunning) {
+        
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"温馨提示" message:@"您的网络有问题，请检查网络" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *action = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+          
+        }];
+        UIAlertAction *quxiao = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+         
+        }];
+        //
+        [alert addAction:action];
+        [alert addAction:quxiao];
+        [self presentViewController:alert animated:YES completion:nil];
+        
+        
+    }else{
+        
+    
     AFHTTPSessionManager *sessionManager = [AFHTTPSessionManager manager];
     sessionManager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
     [ProgressHUD show:@"开始加载"];
@@ -73,7 +125,7 @@
     
     NSLog(@"%@",self.bookIdstring);
     
-    
+    }
     
 }
 - (NSDictionary *)detailedDic{
@@ -96,15 +148,15 @@
         self.webView.backgroundColor = [UIColor whiteColor];
         self.webView.scrollView.contentInset = UIEdgeInsetsMake(200, 0, 0, 0);
         self.webView.scrollView.backgroundColor = [UIColor whiteColor];
-        
+        self.webView.scrollView.bounces = NO;
         [self.webView.scrollView addSubview:self.bookImageView];
-        
+        self.webView.delegate = self;
         self.webView.opaque = NO;
         
    
         NSString *urlstr = self.digestsDic[@"content"];
         [self.webView loadHTMLString:urlstr baseURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath] ]];
-        
+        //去掉有黑边
         self.webView.scrollView.bounces = NO;
 //        //判断是否有音频
 //        NSString *vistring = self.detailedDic[@"bookvideo"];

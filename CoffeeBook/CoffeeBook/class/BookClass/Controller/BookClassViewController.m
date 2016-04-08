@@ -12,6 +12,7 @@
 #import "BookClassModel.h"
 #import "ProgressHUD.h"
 #import "MJRefresh.h"
+#import "ZMYNetManager.h"
 #import "SetViewController.h"
 #import "ClassListViewController.h"
 @interface BookClassViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
@@ -36,15 +37,33 @@
         // 结束刷新
         [self.collection.mj_header endRefreshing];
     }];
-        [self swipebackAction];
+    
+    
+    [self swipebackAction];
 }
 
 
 - (void)loadData{
+    if (![ZMYNetManager shareZMYNetManager].isZMYNetWorkRunning) {
+        
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"温馨提示" message:@"您的网络有问题，请检查网络" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *action = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+           
+        }];
+        UIAlertAction *quxiao = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+          
+        }];
+        //
+        [alert addAction:action];
+        [alert addAction:quxiao];
+        [self presentViewController:alert animated:YES completion:nil];
+        
+        
+    }else{
     AFHTTPSessionManager *sessionManager = [AFHTTPSessionManager manager];
     sessionManager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
     [sessionManager GET:bookClassJieko parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
-       // [ProgressHUD show:@"正在加载..."];
+        [ProgressHUD show:@"正在加载..."];
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
        // NSLog(@"%@", responseObject);
         NSDictionary *dic = responseObject;
@@ -58,9 +77,9 @@
                 [self.arrayccn addObject:dict[@"typeccn"]];
             }
           //  NSLog(@"%@", dic);
-            
+            [ProgressHUD showSuccess:@"加载成功"];
         }else{
-           // [ProgressHUD showError:@"网络有误"];
+            [ProgressHUD showError:@"网络有误"];
             
             
             
@@ -71,7 +90,7 @@
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"%@", error);
     }];
-    
+    }
 }
 #pragma mark ------- UICollectionViewDataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{

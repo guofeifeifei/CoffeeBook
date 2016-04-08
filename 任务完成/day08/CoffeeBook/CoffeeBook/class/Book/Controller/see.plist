@@ -1,0 +1,33 @@
+{
+bookCoverUrl = "http://file.dushu.io/file/a87f1ff3a8884318aa87a4a90171089c";
+bookId = 155;
+content = "
+\n          <meta charset=\"UTF-8\"/>
+\n          <style type=\"text/css\">
+    \n          .rich_media_content * {
+    \n          max-width:100%!important;
+    \n          }
+    \n          img {
+    \n          height:auto!important;
+    \n          }
+    \n          </style>
+\n          <div class=\"rich_media_content\">
+    \n        <p>&ldquo;\U949d\U611f\U529b&rdquo;,\U4f5c\U4e3a\U4e00\U79cd\U4e3a\U4eba\U5904\U4e16\U7684\U6001\U5ea6\U53ca\U4eba\U751f\U667a\U6167\Uff0c\U76f8\U6bd4\U6fc0\U8fdb\U3001\U5f20\U626c\U3001\U521a\U786c\U800c\U8a00\Uff0c\U66f4\U6613\U5728\U76ee\U524d\U7ade\U4e89\U6fc0\U70c8\U3001\U8282\U594f\U98de\U5feb\U3001\U9519\U7efc\U590d\U6742\U7684\U73b0\U4ee3\U793e\U4f1a\U4e2d\U751f\U5b58\Uff0c\U4e5f\U66f4\U6613\U53d6\U5f97\U6210\U529f\Uff0c\U5e76\U540c\U65f6\U6c42\U5f97\U81ea\U8eab\U5185\U5fc3\U7684\U5e73\U8861\U53ca\U4e0e\U4ed6\U4eba\U548c\U793e\U4f1a\U7684\U548c\U8c10\U76f8\U5904\U3002\U4f5c\U8005\U636e\U6b64\U5206\U7ae0\U8bba\U8ff0\U4e86\U5728\U7537\U5973\U7231\U60c5\U3001\U5a5a\U59fb\U3001\U4e8b\U4e1a\U3001\U4eba\U751f\U3001\U5bb6\U5ead\U7b49\U8bf8\U591a\U65b9\U9762\U7684\U8868\U73b0\U548c\U4f5c\U7528\Uff0c\U5e76\U4ece\U533b\U5b66\U89d2\U5ea6\U51fa\U53d1\Uff08\U4f5c\U8005\U4e3a\U533b\U5b66\U535a\U58eb\Uff09\Uff0c\U9610\U8ff0\U5176\U5408\U7406\U6027\U3002\U4f5c\U4e3a\U4e00\U79cd\U72ec\U7279\U7684\U4eba\U751f\U667a\U6167\Uff0c\U5bf9\U5f53\U4ee3\U793e\U4f1a\U4e2d\U7684\U4eba\U4eec\U90fd\U6709\U5168\U65b0\U7684\U542f\U793a\U3002</p>
+    \n
+    \n<p>\Uff08\U672c\U6bb5\U4e3a<strong>\U300a\U949d\U611f\U529b\U300b</strong>\U89c6\U9891\U7b2c1\U6bb5\Uff0c\U60f3\U4e86\U89e3\U66f4\U591a\U5185\U5bb9\Uff0c\U8bf7\U70b9\U51fb\U672c\U9875\U9762\U53f3\U4e0a\U89d2\U5c01\U9762\U56fe\U8fdb\U884c\U83b7\U53d6\Uff09</p></div>";
+fragmentId = 1034;
+isFavorite = 0;
+isLiked = 0;
+lastUpdateTime = 1457087418000;
+mediaUrls =     (
+"ppyun://0a2dnq6YpKafoKuL4K2joK_hoaSdoq-ZpQ"
+);
+sharable = 1;
+shareImageUrl = "http://file.dushu.io/file/a70e97f3ab1e4974bdf2a4b800c0b60c";
+shareLink = "http://m.dushu.io/Fragment/7ksnzkkk7wjtsxey";
+status = 1;
+summary = "\U5728\U4e2d\U6587\U91cc\Uff0c\U949d\U611f\U8fd9\U4e2a\U8bcd\U5e76\U4e0d\U5e38\U89c1\U3002\U201c\U949d\U611f\U529b\U201d\U53ef\U76f4\U8bd1\U4e3a\U201c\U8fdf\U949d\U7684\U529b\U91cf\U201d\Uff0c\U867d\U7136\U7ed9\U4eba\U4ee5\U8fdf\U949d\Uff0c\U6728\U8bb7\U7684\U8d1f\U9762\U5370\U8c61\Uff0c\U4f46\U5374\U662f\U6211\U4eec\U8d62\U5f97\U7f8e\U597d\U751f\U6d3b\U7684\U624b\U6bb5\U548c\U667a\U6167\U3002";
+title = "\U8bb8\U591a\U65f6\U5019\Uff0c\U949d\U611f\U6bd4\U654f\U611f\U66f4\U52a0\U6709\U529b";
+titleImageUrl = "http://file.dushu.io/file/a70e97f3ab1e4974bdf2a4b800c0b60c";
+type = 3;
+}

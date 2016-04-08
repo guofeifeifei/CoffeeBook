@@ -97,7 +97,7 @@
                                                     <color key="titleColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="aboutCoffeeBook:" destination="ytC-Ve-JzJ" eventType="touchUpInside" id="5rP-sM-xjJ"/>
+                                                    <segue destination="wUS-Uw-nSn" kind="push" id="XA7-FV-hY0"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YLY-XL-yeQ">
@@ -226,6 +226,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="cleanMemoryLable" destination="YLY-XL-yeQ" id="BHA-B2-N0g"/>
+                        <outlet property="headImage" destination="6ba-Ob-Ifu" id="raM-Zj-5aL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mgx-tn-6hT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -259,6 +260,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AWl-Sw-UsN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="147.5" y="-973.5"/>
+        </scene>
+        <!--关于coffee书-->
+        <scene sceneID="rCA-65-R1W">
+            <objects>
+                <viewController id="wUS-Uw-nSn" customClass="AboutViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Osu-Jt-aNL"/>
+                        <viewControllerLayoutGuide type="bottom" id="5Ev-55-sWe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fqK-VA-f9Y">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="coffe书是一款可以听书看书，观看到最新书籍的一软件。可以丰富你在工作休闲之余的时间。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uem-yc-JT1">
+                                <rect key="frame" x="25" y="104" width="325" height="90"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.98913946630000005" green="0.52230619310000004" blue="0.04068711773" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5Ev-55-sWe" firstAttribute="top" secondItem="uem-yc-JT1" secondAttribute="bottom" constant="473" id="4md-eZ-T1P"/>
+                            <constraint firstItem="uem-yc-JT1" firstAttribute="leading" secondItem="fqK-VA-f9Y" secondAttribute="leadingMargin" constant="9" id="SVT-By-jvO"/>
+                            <constraint firstItem="uem-yc-JT1" firstAttribute="top" secondItem="Osu-Jt-aNL" secondAttribute="bottom" constant="40" id="dYu-47-T2c"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="uem-yc-JT1" secondAttribute="trailing" constant="9" id="xnb-ZM-KVV"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="关于coffee书" id="UYN-oT-CWG"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KGS-gG-VoM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="614.5" y="-1020.5"/>
         </scene>
         <!--登录-->
         <scene sceneID="nVD-fP-iRg">

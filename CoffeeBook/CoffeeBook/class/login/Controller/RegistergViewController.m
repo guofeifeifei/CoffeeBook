@@ -24,9 +24,8 @@
     [self showBackButton];
     self.passworkText.secureTextEntry = YES;
     self.confirmPassword.secureTextEntry = YES;
-    
-    
-    
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor colorWithRed:103.0 / 255.0 green:47.0 / 255.0 blue:42.0 /255.0 alpha:1.0], NSFontAttributeName:[UIFont systemFontOfSize:18.0f]}];
+ 
 }
 //按return回收键盘
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
@@ -57,6 +56,7 @@
             [bUser signUpInBackgroundWithBlock:^(BOOL isSuccessful, NSError *error) {
                 if (isSuccessful) {
                     [ProgressHUD showSuccess:@"注册成功"];
+                    [self.navigationController popViewControllerAnimated:YES];
                     
                 }else{
                     [ProgressHUD showError:@"注册失败"];
@@ -110,7 +110,10 @@
         
 
     }
-    
+    if(self.passworkText.text.length < 1 || self.passworkText.text.length > 9){
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"亲情提示" message:@"密码长度在1~8位" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+        [alert show];
+    }
     
     //两次密码不一致
     if (![self.passworkText.text isEqualToString:self.confirmPassword.text]) {

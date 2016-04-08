@@ -10,17 +10,8 @@
 
 @implementation UIViewController (Common)
 - (void)swipebackAction{
-        UISwipeGestureRecognizer *recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(back)];
-    recognizer.direction = UISwipeGestureRecognizerDirectionRight;
-    [self.view addGestureRecognizer:recognizer];
-
-}
-- (void)back{
-    [self.navigationController popToRootViewControllerAnimated:YES];
-}
-- (void)swipeLeftAction{
     UISwipeGestureRecognizer *recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(leftBack)];
-    recognizer.direction = UISwipeGestureRecognizerDirectionLeft;
+    recognizer.direction = UISwipeGestureRecognizerDirectionRight;
     [self.view addGestureRecognizer:recognizer];
     
     
@@ -28,7 +19,7 @@
 - (void)leftBack{
     
     
- 
+    [self.navigationController popViewControllerAnimated:YES];
 }
 - (void)showBackButton{
     UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];

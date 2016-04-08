@@ -15,6 +15,7 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *loginBtn;
 @property (weak, nonatomic) IBOutlet UIButton *loginImageView;
+@property (weak, nonatomic) IBOutlet UIButton *headImage;
 
 @end
 
@@ -29,8 +30,17 @@
     
     [self.view addSubview:self.loginBtn];
     [self.view addSubview:self.loginImageView];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeImage:) name:@"changeImage" object:nil];
+    
 }
-
+- (void)changeImage:(NSNotification *)notification{
+    [self.headImage setImage:[UIImage imageNamed:notification.userInfo[@"input"]] forState:UIControlStateNormal];
+    
+}
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -58,16 +68,8 @@
 - (IBAction)userFeedBack:(id)sender {
     [self sendEmail];
 }
-- (IBAction)aboutCoffeeBook:(id)sender {
-    
-    [ProgressHUD show:@"正在为你检测"];
-    [self performSelector:@selector(checkAppVersion) withObject:nil afterDelay:2.0];
-    
-}
-- (void)checkAppVersion{
-     [ProgressHUD showSuccess:@"当前已是最新版本"];
-    
-}
+
+
 - (void)sendEmail{
     Class mailClass = NSClassFromString(@"MFMailComposeViewController");
     if (mailClass != nil) {
@@ -105,7 +107,7 @@
             break;
         case MFMailComposeResultSent:{
             NSLog(@"发送邮件");
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"邮件发送成功" message:@"邮件发送成功，谢谢您的宝贵意见，我将认真改进" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:@"取消", nil];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"邮件发送成功" message:@"邮件发送成功，谢谢您的宝贵意见，我们将认真改进" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:@"取消", nil];
             alert.delegate = self;
             [alert show];
 

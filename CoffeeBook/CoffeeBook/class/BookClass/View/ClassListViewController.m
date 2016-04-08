@@ -12,6 +12,7 @@
 #import "BookList.h"
 #import "ProgressHUD.h"
 #import "MJRefresh.h"
+#import "ZMYNetManager.h"
 #import <AFNetworking/AFHTTPSessionManager.h>
 @interface ClassListViewController ()<UITableViewDataSource, UITableViewDelegate>{
     NSInteger _pagenum;
@@ -28,6 +29,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     _pagenum = 1;
+    [self.navigationController.navigationBar setBarTintColor:[UIColor whiteColor]];
     [self showBackButton];
     self.navigationItem.title = self.stypeTitle;
     self.navigationItem.hidesBackButton = YES;
@@ -61,7 +63,22 @@
     
 }
 - (void)loadData{
-    
+    if (![ZMYNetManager shareZMYNetManager].isZMYNetWorkRunning) {
+        
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"温馨提示" message:@"您的网络有问题，请检查网络" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *action = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+           
+        }];
+        UIAlertAction *quxiao = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            
+        }];
+        //
+        [alert addAction:action];
+        [alert addAction:quxiao];
+        [self presentViewController:alert animated:YES completion:nil];
+        
+        
+    }else{
     AFHTTPSessionManager *sessionManager = [AFHTTPSessionManager manager];
     sessionManager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
     [ProgressHUD show:@"正在加载..."];
@@ -95,7 +112,7 @@
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
          [ProgressHUD showError:@"网络有误"];
     }];
-    
+    }
 }
 #pragma mark --------UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{

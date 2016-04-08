@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="oZk-Lk-9mx">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--Book View Controller-->
+        <scene sceneID="QpS-uX-kQ3">
+            <objects>
+                <viewController id="QeX-Bd-w6l" customClass="BookViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Zxu-Hg-ADJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="oGh-zb-CRM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NUL-h0-DL0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="wFX-yn-x5N">
+                        <nil key="title"/>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="5yw-lG-sdd">
+                            <rect key="frame" x="166" y="2" width="44" height="40"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" image="bookclub40">
+                                <attributedString key="attributedTitle">
+                                    <fragment content="Button">
+                                        <attributes>
+                                            <font key="NSFont" size="1" name="HelveticaNeue"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="20"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                        </button>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NkE-Wo-j43" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1683.5" y="379.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="OCL-dU-DDV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oZk-Lk-9mx" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1z8-2i-eKx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="QeX-Bd-w6l" kind="relationship" relationship="rootViewController" id="zfI-0b-qrq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WoR-4E-oYm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1291.5" y="384.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bookclub40" width="40" height="40"/>
+    </resources>
+</document>
