@@ -88,10 +88,10 @@
 		7AD590901C89AD5D008460B8 /* SeeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD5908F1C89AD5D008460B8 /* SeeViewController.m */; };
 		7AD5C8991C9172C4009AF2B3 /* CollectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD5C8981C9172C4009AF2B3 /* CollectView.m */; };
 		7AE127301C8A760A00B330FB /* see.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AE1272F1C8A760A00B330FB /* see.plist */; };
-		7AE127321C8A800D00B330FB /* Touch_The_Sky.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 7AE127311C8A800D00B330FB /* Touch_The_Sky.mp4 */; };
 		7AE127341C8A83BE00B330FB /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AE127331C8A83BE00B330FB /* MediaPlayer.framework */; };
 		7AE1273D1C8AC7FA00B330FB /* lesion.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AE1273C1C8AC7FA00B330FB /* lesion.plist */; };
 		7AE1273F1C8AEFD200B330FB /* read.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AE1273E1C8AEFD200B330FB /* read.plist */; };
+		7AEDE8711CB8EC320009C3BE /* Touch_The_Sky.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 7AEDE8701CB8EC320009C3BE /* Touch_The_Sky.mp4 */; };
 		7AF227651C88525F008C2F23 /* BookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF227641C88525F008C2F23 /* BookViewController.m */; };
 		7AF227681C885283008C2F23 /* BookClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF227671C885283008C2F23 /* BookClassViewController.m */; };
 		7AF2276B1C885298008C2F23 /* DiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF2276A1C885298008C2F23 /* DiscoverViewController.m */; };
@@ -233,10 +233,10 @@
 		7AD5C8971C9172C4009AF2B3 /* CollectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectView.h; sourceTree = "<group>"; };
 		7AD5C8981C9172C4009AF2B3 /* CollectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectView.m; sourceTree = "<group>"; };
 		7AE1272F1C8A760A00B330FB /* see.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = see.plist; sourceTree = "<group>"; };
-		7AE127311C8A800D00B330FB /* Touch_The_Sky.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = Touch_The_Sky.mp4; path = ../../../../Downloads/Touch_The_Sky.mp4; sourceTree = "<group>"; };
 		7AE127331C8A83BE00B330FB /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		7AE1273C1C8AC7FA00B330FB /* lesion.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = lesion.plist; sourceTree = "<group>"; };
 		7AE1273E1C8AEFD200B330FB /* read.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = read.plist; sourceTree = "<group>"; };
+		7AEDE8701CB8EC320009C3BE /* Touch_The_Sky.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Touch_The_Sky.mp4; sourceTree = "<group>"; };
 		7AF227621C88438E008C2F23 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		7AF227631C88525F008C2F23 /* BookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookViewController.h; sourceTree = "<group>"; };
 		7AF227641C88525F008C2F23 /* BookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookViewController.m; sourceTree = "<group>"; };
@@ -528,10 +528,10 @@
 		7AF227501C8840D3008C2F23 /* common */ = {
 			isa = PBXGroup;
 			children = (
-				7A6DFCCE1C8FF7BA00651712 /* Reachability */,
-				7AE127311C8A800D00B330FB /* Touch_The_Sky.mp4 */,
+				7AEDE8701CB8EC320009C3BE /* Touch_The_Sky.mp4 */,
 				7A8349711CAB4E7000B24121 /* headimage1.jpg */,
 				7AD590801C892CB4008460B8 /* JieKo.h */,
+				7A6DFCCE1C8FF7BA00651712 /* Reachability */,
 				7AF227621C88438E008C2F23 /* PrefixHeader.pch */,
 				7AC93F1B1C8C0825003BCEF8 /* UIViewController+Common.h */,
 				7AC93F1C1C8C0825003BCEF8 /* UIViewController+Common.m */,
@@ -805,7 +805,7 @@
 				7AD5907F1C892028008460B8 /* BookTableViewCell.xib in Resources */,
 				7AD590841C89610F008460B8 /* Book.plist in Resources */,
 				7AD590761C891A04008460B8 /* blueArrowDown.png in Resources */,
-				7AE127321C8A800D00B330FB /* Touch_The_Sky.mp4 in Resources */,
+				7AEDE8711CB8EC320009C3BE /* Touch_The_Sky.mp4 in Resources */,
 				7AC93F2F1C8C33A0003BCEF8 /* DisListTableViewCell.xib in Resources */,
 				7A6DFCD51C8FF7BA00651712 /* LICENCE.txt in Resources */,
 				7AC93F3C1C8C5D71003BCEF8 /* BookClassCollectionViewCell.xib in Resources */,
@@ -1036,8 +1036,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Beijing Lamco Sinyo education technology co., LTD (CCQ5LLLX4L)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Beijing Lamco Sinyo education technology co., LTD (CCQ5LLLX4L)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Libary",
@@ -1059,8 +1059,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Beijing Lamco Sinyo education technology co., LTD (CCQ5LLLX4L)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Beijing Lamco Sinyo education technology co., LTD (CCQ5LLLX4L)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Libary",
